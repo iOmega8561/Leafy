@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDA0628029A3C21E003C7E8A /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0627F29A3C21E003C7E8A /* StopWatch.swift */; };
+		DDA0628229A3C227003C7E8A /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0628129A3C227003C7E8A /* StopWatchManager.swift */; };
 		E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */; };
 		E3A4E39129A3B7B300D998C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39029A3B7B300D998C1 /* ContentView.swift */; };
 		E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E39229A3B7B300D998C1 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DDA0627F29A3C21E003C7E8A /* StopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StopWatch.swift; path = ../../StopWatch.swift; sourceTree = "<group>"; };
+		DDA0628129A3C227003C7E8A /* StopWatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StopWatchManager.swift; path = ../../StopWatchManager.swift; sourceTree = "<group>"; };
 		E3A4E38B29A3B7B300D998C1 /* MC3app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appApp.swift; sourceTree = "<group>"; };
 		E3A4E39029A3B7B300D998C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			children = (
 				E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */,
 				E3A4E39029A3B7B300D998C1 /* ContentView.swift */,
+				DDA0627F29A3C21E003C7E8A /* StopWatch.swift */,
+				DDA0628129A3C227003C7E8A /* StopWatchManager.swift */,
 				E3A4E39229A3B7B300D998C1 /* Assets.xcassets */,
 				E3A4E39729A3B7B300D998C1 /* Persistence.swift */,
 				E3A4E39929A3B7B300D998C1 /* MC3app.xcdatamodeld */,
@@ -264,7 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3A4E39829A3B7B300D998C1 /* Persistence.swift in Sources */,
+				DDA0628229A3C227003C7E8A /* StopWatchManager.swift in Sources */,
 				E3A4E39129A3B7B300D998C1 /* ContentView.swift in Sources */,
+				DDA0628029A3C21E003C7E8A /* StopWatch.swift in Sources */,
 				E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */,
 				E3A4E39B29A3B7B300D998C1 /* MC3app.xcdatamodeld in Sources */,
 			);
