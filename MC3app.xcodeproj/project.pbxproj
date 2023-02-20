@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD3C57FA29A3C3FB00BCB543 /* StopWatch_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C57F929A3C3FB00BCB543 /* StopWatch_1.swift */; };
 		DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */; };
+		DD3C57FE29A3C4C500BCB543 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */; };
 		E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */; };
 		E3A4E39129A3B7B300D998C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39029A3B7B300D998C1 /* ContentView.swift */; };
 		E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E39229A3B7B300D998C1 /* Assets.xcassets */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DD3C57F929A3C3FB00BCB543 /* StopWatch_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch_1.swift; sourceTree = "<group>"; };
 		DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
+		DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		E3A4E38B29A3B7B300D998C1 /* MC3app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appApp.swift; sourceTree = "<group>"; };
 		E3A4E39029A3B7B300D998C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 			children = (
 				E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */,
 				E3A4E39029A3B7B300D998C1 /* ContentView.swift */,
-				DD3C57F929A3C3FB00BCB543 /* StopWatch_1.swift */,
+				DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */,
 				DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */,
 				E3A4E39229A3B7B300D998C1 /* Assets.xcassets */,
 				E3A4E39729A3B7B300D998C1 /* Persistence.swift */,
@@ -270,9 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3A4E39829A3B7B300D998C1 /* Persistence.swift in Sources */,
+				DD3C57FE29A3C4C500BCB543 /* StopWatch.swift in Sources */,
 				DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */,
 				E3A4E39129A3B7B300D998C1 /* ContentView.swift in Sources */,
-				DD3C57FA29A3C3FB00BCB543 /* StopWatch_1.swift in Sources */,
 				E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */,
 				E3A4E39B29A3B7B300D998C1 /* MC3app.xcdatamodeld in Sources */,
 			);
