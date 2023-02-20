@@ -1,0 +1,13 @@
+## User settings
+xcuserdata/
+
+## Xcode 8 and earlier
+*.xcscmblueprint
+*.xccheckout
+
+## macos
+.DS_Store
+
+## VSCode
+.vscode
+
