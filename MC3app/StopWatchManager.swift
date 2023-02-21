@@ -14,7 +14,6 @@ class StopWatchManager: ObservableObject{
         case running
         case breakOn
         case breakOff
-        case paused
         case stopped
     }
     
@@ -35,7 +34,7 @@ class StopWatchManager: ObservableObject{
     
     func breakOn(){
         timer.invalidate()
-        mode = .paused
+        mode = .breakOn
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
             self.studyBreak += 0.1
         }
@@ -43,8 +42,8 @@ class StopWatchManager: ObservableObject{
     
     func breakOff(){
         timer.invalidate()
-        mode = .paused
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+        mode = .breakOff
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [self] timer in
             self.secondsElapsed += 0.1
         }
     }

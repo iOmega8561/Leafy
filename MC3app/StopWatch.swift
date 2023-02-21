@@ -18,19 +18,11 @@ struct StopWatch: View {
                 Text(String(format:"%.1f", stopWatchManager.secondsElapsed))
                     .font(.custom("Avenir", size: 60))
                     .frame(width: 200, height: 100, alignment: .leading)
-                //                    .padding(.top,200)
-                //                    .padding(.bottom,100)
-                //                    .padding(.trailing,100)
-                //                    .padding(.leading,100)
-            
+                
                 Text("Break")
                 Text(String(format:"%.1f", stopWatchManager.studyBreak))
                     .font(.custom("Avenir", size: 60))
                     .frame(width: 200, height: 100, alignment: .leading)
-                //                    .padding(.top,200)
-                //                    .padding(.bottom,100)
-                //                    .padding(.trailing,100)
-                //                    .padding(.leading,100)
                 if stopWatchManager.mode == .stopped{
                     Button(action: {self.stopWatchManager.Start()}) {
                         TimerButton(label: "Start", buttonColor: .yellow, textColor: .black)
@@ -45,10 +37,19 @@ struct StopWatch: View {
                     }
                 }
                 
-                if stopWatchManager.mode == .paused {
+                if stopWatchManager.mode == .breakOn {
                     
                     Button(action: {self.stopWatchManager.breakOff()}) {
                         TimerButton(label: "Break off", buttonColor: .yellow, textColor: .black)
+                    }
+                    Button(action: {self.stopWatchManager.stop()}) {
+                        TimerButton(label: "Finish", buttonColor: .red, textColor: .white)
+                    }
+                }
+                if stopWatchManager.mode == .breakOff {
+                    
+                    Button(action: {self.stopWatchManager.breakOn()}) {
+                        TimerButton(label: "Break on", buttonColor: .yellow, textColor: .black)
                     }
                     Button(action: {self.stopWatchManager.stop()}) {
                         TimerButton(label: "Finish", buttonColor: .red, textColor: .white)
