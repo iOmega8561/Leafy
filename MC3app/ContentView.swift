@@ -8,6 +8,61 @@
 import SwiftUI
 import CoreData
 
+/*struct RecentAuths: View {
+    var colorScheme: ColorScheme
+    var geometry: GeometryProxy
+    
+    private func noPurposeFunction(rowC: Int) -> CGFloat {
+        if rowC < 6 { return 45.0}
+        
+        else if rowC < 10 { return 44.0 }
+        
+        else if rowC <= 15 { return 43.0 }
+        
+        else { return 42.7 }
+    }
+    
+    private func calcMaxHeight() -> CGFloat {
+        var width: CGFloat
+        let dataCount: CGFloat = CGFloat(sampleData.count)
+        
+        let superIncredibleMath = dataCount - (dataCount == 1.0 ? 0.0:(0.1 * dataCount))
+        
+        width = superIncredibleMath * noPurposeFunction(rowC: sampleData.count)
+        if width > (geometry.size.height * 0.8) {
+            width = geometry.size.height * 0.8
+        }
+        
+        return width
+    }
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            
+            Rectangle()
+                .fill(Color("PosteYellow"))
+                .opacity(0.9)
+                .overlay() {
+                    
+                    ScrollView {
+                        VStack {
+                            Spacer()
+                            ForEach(sampleData) { auth in
+                                ScrollViewElement(colorScheme: colorScheme, auth: auth)
+                            }
+                        }.frame(maxWidth: UIDevice.current.localizedModel == "iPhone" ? 340.0:700.0)
+                    }
+                }
+                .frame(maxWidth: UIDevice.current.localizedModel == "iPhone" ? 340.0:700.0, maxHeight: calcMaxHeight())
+                .cornerRadius(20.0)
+                .shadow(color: Color("PosteYellow"), radius: 4)
+            
+            Spacer()
+        }
+    }
+}*/
+
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -23,7 +78,27 @@ struct ContentView: View {
                     NavigationLink {
                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        HStack {
+                            VStack {
+                                Image(systemName: "cloud.moon.rain")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: 50.0)
+                                
+                                Spacer().frame(maxHeight: 6.0)
+                                
+                                Text(item.timestamp!, formatter: itemFormatter)
+                            }
+                            Spacer().frame(maxWidth: 60.0)
+                            VStack {
+                                
+                                Text("Subject Name").font(.system(size: 23.0))
+                                
+                                Spacer().frame(maxHeight: 6.0)
+                                
+                                Text("Chapter/Topic")
+                            }
+                        }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -75,9 +150,15 @@ struct ContentView: View {
 }
 
 private let itemFormatter: DateFormatter = {
+    let template = "MMMdd"
+    let format = DateFormatter.dateFormat(fromTemplate: template, options: 0, locale: NSLocale.current)
+    
+    
     let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
+    formatter.dateStyle = .medium
+    formatter.timeStyle = .none
+    formatter.dateFormat = format
+    
     return formatter
 }()
 
