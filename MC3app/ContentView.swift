@@ -32,7 +32,7 @@ struct ContentView: View {
                     } label: {
                         HStack {
                             VStack {
-                                Image(systemName: imgs[1])
+                                Image(systemName: imgs[Int(item.emotion)])
                                     .resizable()
                                     .scaledToFit()
                                     .frame(maxWidth: 50.0)
@@ -74,6 +74,12 @@ struct ContentView: View {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
+            newItem.emotion = 0
+            newItem.subject = "Some Subject"
+            newItem.saynicetoyou = "Something Nice to You"
+            newItem.totalbreaktime = 30.0
+            newItem.totalstudytime = 120.0
+            newItem.whatdidyoustudy = "What did u study"
 
             do {
                 try viewContext.save()
