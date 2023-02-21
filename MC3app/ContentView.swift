@@ -8,60 +8,10 @@
 import SwiftUI
 import CoreData
 
-/*struct RecentAuths: View {
-    var colorScheme: ColorScheme
-    var geometry: GeometryProxy
-    
-    private func noPurposeFunction(rowC: Int) -> CGFloat {
-        if rowC < 6 { return 45.0}
-        
-        else if rowC < 10 { return 44.0 }
-        
-        else if rowC <= 15 { return 43.0 }
-        
-        else { return 42.7 }
-    }
-    
-    private func calcMaxHeight() -> CGFloat {
-        var width: CGFloat
-        let dataCount: CGFloat = CGFloat(sampleData.count)
-        
-        let superIncredibleMath = dataCount - (dataCount == 1.0 ? 0.0:(0.1 * dataCount))
-        
-        width = superIncredibleMath * noPurposeFunction(rowC: sampleData.count)
-        if width > (geometry.size.height * 0.8) {
-            width = geometry.size.height * 0.8
-        }
-        
-        return width
-    }
-    
-    var body: some View {
-        HStack {
-            Spacer()
-            
-            Rectangle()
-                .fill(Color("PosteYellow"))
-                .opacity(0.9)
-                .overlay() {
-                    
-                    ScrollView {
-                        VStack {
-                            Spacer()
-                            ForEach(sampleData) { auth in
-                                ScrollViewElement(colorScheme: colorScheme, auth: auth)
-                            }
-                        }.frame(maxWidth: UIDevice.current.localizedModel == "iPhone" ? 340.0:700.0)
-                    }
-                }
-                .frame(maxWidth: UIDevice.current.localizedModel == "iPhone" ? 340.0:700.0, maxHeight: calcMaxHeight())
-                .cornerRadius(20.0)
-                .shadow(color: Color("PosteYellow"), radius: 4)
-            
-            Spacer()
-        }
-    }
-}*/
+let imgs = [
+"cloud.moon.rain",
+"cloud"
+]
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -69,18 +19,20 @@ struct ContentView: View {
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
+    
     private var items: FetchedResults<Item>
 
     var body: some View {
         NavigationView {
+            
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        Text(item.saynicetoyou!)
                     } label: {
                         HStack {
                             VStack {
-                                Image(systemName: "cloud.moon.rain")
+                                Image(systemName: imgs[1])
                                     .resizable()
                                     .scaledToFit()
                                     .frame(maxWidth: 50.0)
@@ -92,11 +44,11 @@ struct ContentView: View {
                             Spacer().frame(maxWidth: 60.0)
                             VStack {
                                 
-                                Text("Subject Name").font(.system(size: 23.0))
+                                Text(item.subject!).font(.system(size: 23.0))
                                 
                                 Spacer().frame(maxHeight: 6.0)
                                 
-                                Text("Chapter/Topic")
+                                Text(item.whatdidyoustudy!)
                             }
                         }
                     }
@@ -114,6 +66,7 @@ struct ContentView: View {
                 }
             }
             Text("Select an item")
+            
         }
     }
 
@@ -135,7 +88,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            //offsets.map { items[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
