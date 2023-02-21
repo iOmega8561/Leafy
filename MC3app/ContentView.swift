@@ -41,14 +41,21 @@ struct ContentView: View {
                                 
                                 Text(item.timestamp!, formatter: itemFormatter)
                             }
-                            Spacer().frame(maxWidth: 60.0)
+                            Spacer().frame(maxWidth: 20.0)
                             VStack {
                                 
-                                Text(item.subject!).font(.system(size: 23.0))
+                                HStack {
+                                    Text(item.subject!).font(.system(size: 23.0))
+                                    Spacer()
+                                }
                                 
                                 Spacer().frame(maxHeight: 6.0)
                                 
-                                Text(item.whatdidyoustudy!)
+                                HStack {
+                                    Text(item.whatdidyoustudy!)
+                                    Spacer()
+                                }
+                                
                             }
                         }
                     }
@@ -59,36 +66,9 @@ struct ContentView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
             }
             Text("Select an item")
             
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.emotion = 0
-            newItem.subject = "Some Subject"
-            newItem.saynicetoyou = "Something Nice to You"
-            newItem.totalbreaktime = 30.0
-            newItem.totalstudytime = 120.0
-            newItem.whatdidyoustudy = "What did u study"
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
         }
     }
 
