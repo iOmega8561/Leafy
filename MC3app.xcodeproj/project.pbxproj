@@ -12,12 +12,12 @@
 		E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */; };
 		E3A4E39129A3B7B300D998C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39029A3B7B300D998C1 /* ContentView.swift */; };
 		E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E39229A3B7B300D998C1 /* Assets.xcassets */; };
-		E3A4E39629A3B7B300D998C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E39529A3B7B300D998C1 /* Preview Assets.xcassets */; };
 		E3A4E39829A3B7B300D998C1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39729A3B7B300D998C1 /* Persistence.swift */; };
 		E3A4E39B29A3B7B300D998C1 /* MC3app.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39929A3B7B300D998C1 /* MC3app.xcdatamodeld */; };
 		E3A4E3A529A3B7B400D998C1 /* MC3appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E3A429A3B7B400D998C1 /* MC3appTests.swift */; };
 		E3A4E3AF29A3B7B400D998C1 /* MC3appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E3AE29A3B7B400D998C1 /* MC3appUITests.swift */; };
 		E3A4E3B129A3B7B400D998C1 /* MC3appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E3B029A3B7B400D998C1 /* MC3appUITestsLaunchTests.swift */; };
+		E3DD8F0E29A5019F00F88268 /* NewLogForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD8F0D29A5019F00F88268 /* NewLogForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appApp.swift; sourceTree = "<group>"; };
 		E3A4E39029A3B7B300D998C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E3A4E39229A3B7B300D998C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E3A4E39529A3B7B300D998C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E3A4E39729A3B7B300D998C1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		E3A4E39A29A3B7B300D998C1 /* MC3app.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MC3app.xcdatamodel; sourceTree = "<group>"; };
 		E3A4E3A029A3B7B400D998C1 /* MC3appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MC3appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +51,7 @@
 		E3A4E3AA29A3B7B400D998C1 /* MC3appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MC3appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A4E3AE29A3B7B400D998C1 /* MC3appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appUITests.swift; sourceTree = "<group>"; };
 		E3A4E3B029A3B7B400D998C1 /* MC3appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3DD8F0D29A5019F00F88268 /* NewLogForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLogForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,22 +104,14 @@
 			children = (
 				E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */,
 				E3A4E39029A3B7B300D998C1 /* ContentView.swift */,
+				E3DD8F0D29A5019F00F88268 /* NewLogForm.swift */,
 				DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */,
 				DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */,
 				E3A4E39229A3B7B300D998C1 /* Assets.xcassets */,
 				E3A4E39729A3B7B300D998C1 /* Persistence.swift */,
 				E3A4E39929A3B7B300D998C1 /* MC3app.xcdatamodeld */,
-				E3A4E39429A3B7B300D998C1 /* Preview Content */,
 			);
 			path = MC3app;
-			sourceTree = "<group>";
-		};
-		E3A4E39429A3B7B300D998C1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				E3A4E39529A3B7B300D998C1 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		E3A4E3A329A3B7B400D998C1 /* MC3appTests */ = {
@@ -243,7 +235,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3A4E39629A3B7B300D998C1 /* Preview Assets.xcassets in Resources */,
 				E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +264,7 @@
 				DD3C57FE29A3C4C500BCB543 /* StopWatch.swift in Sources */,
 				DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */,
 				E3A4E39129A3B7B300D998C1 /* ContentView.swift in Sources */,
+				E3DD8F0E29A5019F00F88268 /* NewLogForm.swift in Sources */,
 				E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */,
 				E3A4E39B29A3B7B300D998C1 /* MC3app.xcdatamodeld in Sources */,
 			);
@@ -432,7 +424,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MC3app/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = T8HX5554JX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -464,7 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MC3app/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = T8HX5554JX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
