@@ -21,8 +21,6 @@ struct NewItem {
     var emotion: Int16 = 0
     var subject: String = ""
     var saynicetoyou: String = ""
-    var totalbreaktime: Float = 0
-    var totalstudytime: Float = 0
     var whatdidyoustudy: String = ""
     var writemore: String = ""
 }
@@ -59,6 +57,13 @@ struct SheetView: View {
     @State var item: NewItem = NewItem()
     
     @Binding var showModal: Bool
+    
+    var studyhours: Int16 = 0
+    var studyminutes: Int16 = 0
+    var studyseconds: Int16 = 0
+    var breakhours: Int16 = 0
+    var breakminutes: Int16 = 0
+    var breakseconds: Int16 = 0
     
     var body: some View {
         GeometryReader { proxy in
@@ -196,22 +201,26 @@ struct SheetView: View {
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        BackButton(label: "Save  ", action: { saveItem(item: item)}, type: 0)
+                        BackButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) }, type: 0)
                     }
                 }
             }
         }
     }
     
-    private func saveItem(item: NewItem) {
+    private func saveItem(item: NewItem, shours: Int16, sminutes: Int16, sseconds: Int16, bhours: Int16, bminutes: Int16, bseconds: Int16) {
         let newItem = Item(context: viewContext)
         newItem.timestamp = Date()
         newItem.emotion = item.emotion
         newItem.subject = item.subject
         newItem.saynicetoyou = item.saynicetoyou
-        newItem.totalbreaktime = 30.0
-        newItem.totalstudytime = 120.0
         newItem.whatdidyoustudy = item.whatdidyoustudy
+        newItem.studyhours = shours
+        newItem.studyminutes = sminutes
+        newItem.studyseconds = sseconds
+        newItem.breakhours = bhours
+        newItem.breakminutes = bminutes
+        newItem.breakseconds = bseconds
 
         do {
             try viewContext.save()

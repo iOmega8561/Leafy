@@ -19,9 +19,13 @@ struct PersistenceController {
             newItem.emotion = 0
             newItem.subject = "Some Subject"
             newItem.saynicetoyou = "Something Nice to You"
-            newItem.totalbreaktime = 30.0
-            newItem.totalstudytime = 120.0
             newItem.whatdidyoustudy = "What did u study"
+            newItem.studyhours = 0
+            newItem.studyminutes = 0
+            newItem.studyseconds = 0
+            newItem.breakhours = 0
+            newItem.breakminutes = 0
+            newItem.breakseconds = 0
         }
         do {
             try viewContext.save()

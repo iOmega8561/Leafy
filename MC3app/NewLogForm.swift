@@ -14,8 +14,7 @@ struct NewLogForm: View {
     var body: some View {
         NavigationStack {
             
-            NavigationLink(destination: StopWatch()
-                .navigationBarBackButtonHidden(true)) {
+            NavigationLink(destination: StopWatch()) {
                     Text("\nStudy Time\n")
                 }
                 .isDetailLink(true)
