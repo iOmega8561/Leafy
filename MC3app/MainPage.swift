@@ -14,17 +14,24 @@ struct MainPage: View {
     var body: some View {
         NavigationStack {
             
-            NavigationLink(destination: StopWatch()) {
-                    Text("\nStudy Time\n")
+            VStack{
+                Image("Tree")
+                    .offset(y:127)
+                NavigationLink(destination: StopWatch()) {
+                    Text("\nNew Study Session\n")
                 }
                 .isDetailLink(true)
-                .foregroundColor(Color.black)
-                .font(.system(size:25, weight:.medium))
-                .offset(y:200)
+                .background(Color("ButtonBackground"))
+                .cornerRadius(12)
+                .foregroundColor(Color("ButtonText"))
+                .font(.system(size:25, weight:.semibold))
+                .offset(y:100)
                 .buttonStyle(.bordered)
-            
-            NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
-                Text("LIST")
+               
+                
+                NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
+                    Text("LIST")
+                }.offset(y:-523)
             }
         }
     }
