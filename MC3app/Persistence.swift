@@ -20,6 +20,7 @@ struct PersistenceController {
             newItem.subject = "Some Subject"
             newItem.saynicetoyou = "Something Nice to You"
             newItem.whatdidyoustudy = "What did u study"
+            newItem.writemore = "Some stuff about emotions"
             newItem.studyhours = 0
             newItem.studyminutes = 0
             newItem.studyseconds = 0
