@@ -9,14 +9,11 @@ import SwiftUI
 import CoreData
 
 let imgs = [
-"cloud.moon.rain",
-"cloud",
-"cloud",
-"cloud",
-"cloud",
-"cloud",
-"cloud",
-"cloud"
+"angry",
+"happy",
+"sad",
+"surprised",
+"tired"
 ]
 
 struct LogList: View {
@@ -42,15 +39,14 @@ struct LogList: View {
             
             List {
                 ForEach(items) { item in
-                    NavigationLink {
-                        //Text(item.saynicetoyou!)
-                        DetailView()
-                    } label: {
+                    
+                    NavigationLink(destination: DetailView(item: item)) {
                         HStack {
                             VStack {
-                                Image(systemName: imgs[Int(item.emotion)])
+                                Image(imgs[Int(item.emotion)])
                                     .resizable()
                                     .scaledToFit()
+                                    
                                     .frame(maxWidth: 50.0)
                                 
                                 Spacer().frame(maxHeight: 6.0)
@@ -68,16 +64,21 @@ struct LogList: View {
                                 Spacer().frame(maxHeight: 6.0)
                                 
                                 HStack {
-                                    Text(item.whatdidyoustudy!)
+                                    Text("\(item.studyhours)h \(item.studyminutes)m")
                                     Spacer()
                                 }
                                 
                             }
                         }
                     }
+                    .listRowSeparatorTint(.brown)
+                    .listRowSeparator(.automatic)
+                    .listRowBackground(Color(red: 0.973, green: 0.973, blue: 0.968))
                 }
                 .onDelete(perform: deleteItems)
             }
+            .background(Color(red: 0.925, green: 0.929, blue: 0.912))
+            .scrollContentBackground(.hidden)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -86,9 +87,6 @@ struct LogList: View {
             .sheet(isPresented: $showModal) {
                 SheetView(isShown: $showModal, studyhours: studyhours, studyminutes: studyminutes, studyseconds: studyseconds, breakhours: breakhours, breakminutes: breakminutes, breakseconds: breakseconds)
             }
-            
-            Text("Select an item")
-            
         }
     }
 
