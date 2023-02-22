@@ -56,7 +56,7 @@ struct SheetView: View {
     @State private var selectedEmotion: Int16 = 0
     @State var item: NewItem = NewItem()
     
-    @Binding var showModal: Bool
+    @Binding var isShown: Bool
     
     var studyhours: Int16 = 0
     var studyminutes: Int16 = 0
@@ -197,11 +197,11 @@ struct SheetView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                        CustomButton(label: "Back  ", action: { dismiss() }, type: 1)
+                        CustomButton(label: "Back  ", action: { isShown = false/*; dismiss()*/ }, type: 1)
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        CustomButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) }, type: 0)
+                        CustomButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds); isShown = false/*; dismiss()*/ }, type: 0)
                     }
                 }
             }
@@ -233,9 +233,10 @@ struct SheetView: View {
     }
 
 }
+
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(showModal: .constant(false))
+        SheetView(isShown: .constant(false))
     }
 }
 

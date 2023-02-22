@@ -7,9 +7,19 @@
 
 import SwiftUI
 
+var backBTN: some View {
+    
+    NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true)) {
+        HStack {
+            Image(systemName: "chevron.backward")
+            Text("Back")
+        }
+    }
+}
+
 struct StopWatch: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var stopWatchManager = StopWatchManager()
-    @State var showModal: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -81,33 +91,21 @@ struct StopWatch: View {
                         TimerButton(label: "Start", buttonColor: .yellow, textColor: .black)
                     }
                 }
-                if stopWatchManager.mode == .running {
+                if stopWatchManager.mode == .running || stopWatchManager.mode == .breakOn || stopWatchManager.mode == .breakOff {
                     
-                    Button("Finish") {
-                        showModal.toggle()
-                    }.font(.largeTitle)
-                        .sheet(isPresented: $showModal) {
-                            SheetView(showModal: $showModal)
-                        }
-                }
-                
-                if stopWatchManager.mode == .breakOn {
+                    NavigationLink(destination: LogList(showModal: true, studyhours: Int16(stopWatchManager.hours), studyminutes: Int16(stopWatchManager.minutes), studyseconds: Int16(stopWatchManager.seconds), breakhours: Int16(stopWatchManager.hours_2), breakminutes: Int16(stopWatchManager.minutes_2), breakseconds: Int16(stopWatchManager.seconds_2))
+                        .environment(\.managedObjectContext, viewContext)
+                        .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading: backBTN)) {
+                        Text("Finish").font(.largeTitle)
+                    }
                     
-                    Button("Finish") {
-                        showModal.toggle()
-                    }.font(.largeTitle)
-                        .sheet(isPresented: $showModal) {
-                            SheetView(showModal: $showModal)
-                        }
-                }
-                if stopWatchManager.mode == .breakOff {
-                    
-                    Button("Finish") {
+                    /*Button("Finish") {
                         showModal.toggle()
                     }.font(.largeTitle)
                         .sheet(isPresented: $showModal) {
                             SheetView(showModal: $showModal, studyhours: Int16(stopWatchManager.hours), studyminutes: Int16(stopWatchManager.minutes), studyseconds: Int16(stopWatchManager.seconds), breakhours: Int16(stopWatchManager.hours_2), breakminutes: Int16(stopWatchManager.minutes_2), breakseconds: Int16(stopWatchManager.seconds_2))
-                        }
+                        }*/
                 }
             }
         }
