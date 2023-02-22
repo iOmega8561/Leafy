@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct DetailView: View {
+    
     var body: some View {
         GeometryReader { proxy in
             NavigationStack{
