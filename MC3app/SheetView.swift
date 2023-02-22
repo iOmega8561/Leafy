@@ -215,6 +215,7 @@ struct SheetView: View {
         newItem.subject = item.subject
         newItem.saynicetoyou = item.saynicetoyou
         newItem.whatdidyoustudy = item.whatdidyoustudy
+        newItem.writemore = item.writemore
         newItem.studyhours = shours
         newItem.studyminutes = sminutes
         newItem.studyseconds = sseconds
