@@ -127,14 +127,14 @@ struct SheetView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             
-                            ForEach(1..<9) { n in
+                            ForEach(1..<6) { n in
                                 Button(action: {selectedEmotion = Int16(n) }) {
-                                    Image(systemName: "cloud")
+                                    Image(imgs[n])
                                         .renderingMode(.template)
                                         .resizable()
                                         .foregroundColor(n == selectedEmotion ? .green:.black)
                                         .scaledToFit()
-                                        .frame(width: 70.0)
+                                        .frame(width: 90.0)
                                 }
                             }
                             

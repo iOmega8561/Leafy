@@ -9,14 +9,11 @@ import SwiftUI
 import CoreData
 
 let imgs = [
-"cloud.moon.rain",
-"cloud",
-"cloud",
-"cloud",
-"cloud",
-"cloud",
-"cloud",
-"cloud"
+"angry",
+"happy",
+"sad",
+"surprised",
+"tired"
 ]
 
 struct LogList: View {
@@ -46,9 +43,10 @@ struct LogList: View {
                     NavigationLink(destination: DetailView(item: item)) {
                         HStack {
                             VStack {
-                                Image(systemName: imgs[Int(item.emotion)])
+                                Image(imgs[Int(item.emotion)])
                                     .resizable()
                                     .scaledToFit()
+                                    
                                     .frame(maxWidth: 50.0)
                                 
                                 Spacer().frame(maxHeight: 6.0)
