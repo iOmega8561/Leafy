@@ -19,7 +19,7 @@ let imgs = [
 "cloud"
 ]
 
-struct ContentView: View {
+struct LogList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -107,8 +107,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+struct LogList_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        LogList().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

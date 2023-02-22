@@ -13,7 +13,7 @@ struct MC3appApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NewLogForm()
+            MainPage()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

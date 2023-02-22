@@ -25,7 +25,7 @@ struct NewItem {
     var writemore: String = ""
 }
 
-struct BackButton: View {
+struct CustomButton: View {
     var label: String
     var action: ()->Void
     var type: Int
@@ -197,11 +197,11 @@ struct SheetView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                        BackButton(label: "Back  ", action: { dismiss() }, type: 1)
+                        CustomButton(label: "Back  ", action: { dismiss() }, type: 1)
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        BackButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) }, type: 0)
+                        CustomButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) }, type: 0)
                     }
                 }
             }
