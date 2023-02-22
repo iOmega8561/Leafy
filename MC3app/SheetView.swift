@@ -197,11 +197,11 @@ struct SheetView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                        CustomButton(label: "Back  ", action: { isShown = false; dismiss() }, type: 1)
+                        CustomButton(label: "Back  ", action: { isShown = false/*; dismiss()*/ }, type: 1)
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        CustomButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds); isShown = false; dismiss() }, type: 0)
+                        CustomButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds); isShown = false/*; dismiss()*/ }, type: 0)
                     }
                 }
             }
