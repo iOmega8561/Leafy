@@ -38,7 +38,7 @@ struct LogList: View {
     var breakseconds: Int16 = 0
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             
             List {
                 ForEach(items) { item in
