@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct NewLogForm: View {
+struct MainPage: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var body: some View {
@@ -23,7 +23,7 @@ struct NewLogForm: View {
                 .offset(y:200)
                 .buttonStyle(.bordered)
             
-            NavigationLink(destination: ContentView().environment(\.managedObjectContext, viewContext)) {
+            NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
                 Text("LIST")
             }
         }
@@ -31,8 +31,8 @@ struct NewLogForm: View {
 }
 
 
-struct NewLogForm_Previews: PreviewProvider {
+struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
-        NewLogForm()
+        MainPage()
     }
 }
