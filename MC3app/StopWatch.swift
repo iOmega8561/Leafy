@@ -88,7 +88,7 @@ struct StopWatch: View {
                         showModal.toggle()
                     }.font(.largeTitle)
                         .sheet(isPresented: $showModal) {
-                            SheetView(showModal: $showModal)
+                            SheetView(showModal: $showModal, studyhours: Int16(stopWatchManager.hours), studyminutes: Int16(stopWatchManager.minutes), studyseconds: Int16(stopWatchManager.seconds), breakhours: Int16(stopWatchManager.hours_2), breakminutes: Int16(stopWatchManager.minutes_2), breakseconds: Int16(stopWatchManager.seconds_2))
                         }
                     }
                 }

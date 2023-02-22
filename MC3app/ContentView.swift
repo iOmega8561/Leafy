@@ -10,6 +10,12 @@ import CoreData
 
 let imgs = [
 "cloud.moon.rain",
+"cloud",
+"cloud",
+"cloud",
+"cloud",
+"cloud",
+"cloud",
 "cloud"
 ]
 
