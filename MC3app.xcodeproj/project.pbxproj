@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */; };
 		DD3C57FE29A3C4C500BCB543 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */; };
-		DD90564329A522D7001D3534 /* StopWatchStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90564229A522D7001D3534 /* StopWatchStart.swift */; };
 		DD90564529A52323001D3534 /* StopwatchUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90564429A52323001D3534 /* StopwatchUnitView.swift */; };
 		DD90564729A527A2001D3534 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90564629A527A2001D3534 /* SheetView.swift */; };
 		E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
 		DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
-		DD90564229A522D7001D3534 /* StopWatchStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchStart.swift; sourceTree = "<group>"; };
 		DD90564429A52323001D3534 /* StopwatchUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchUnitView.swift; sourceTree = "<group>"; };
 		DD90564629A527A2001D3534 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		E3A4E38B29A3B7B300D998C1 /* MC3app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +112,6 @@
 				DD90564629A527A2001D3534 /* SheetView.swift */,
 				DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */,
 				DD90564429A52323001D3534 /* StopwatchUnitView.swift */,
-				DD90564229A522D7001D3534 /* StopWatchStart.swift */,
 				DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */,
 				E3A4E39229A3B7B300D998C1 /* Assets.xcassets */,
 				E3A4E39729A3B7B300D998C1 /* Persistence.swift */,
@@ -272,7 +269,6 @@
 				E3A4E39829A3B7B300D998C1 /* Persistence.swift in Sources */,
 				DD3C57FE29A3C4C500BCB543 /* StopWatch.swift in Sources */,
 				DD90564729A527A2001D3534 /* SheetView.swift in Sources */,
-				DD90564329A522D7001D3534 /* StopWatchStart.swift in Sources */,
 				DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */,
 				E3A4E39129A3B7B300D998C1 /* ContentView.swift in Sources */,
 				DD90564529A52323001D3534 /* StopwatchUnitView.swift in Sources */,
