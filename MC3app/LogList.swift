@@ -27,14 +27,24 @@ struct LogList: View {
         animation: .default)
     
     private var items: FetchedResults<Item>
-
+    
+    @State var showModal: Bool = false
+    
+    var studyhours: Int16 = 0
+    var studyminutes: Int16 = 0
+    var studyseconds: Int16 = 0
+    var breakhours: Int16 = 0
+    var breakminutes: Int16 = 0
+    var breakseconds: Int16 = 0
+    
     var body: some View {
         NavigationView {
             
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text(item.saynicetoyou!)
+                        //Text(item.saynicetoyou!)
+                        DetailView()
                     } label: {
                         HStack {
                             VStack {
@@ -73,6 +83,10 @@ struct LogList: View {
                     EditButton()
                 }
             }
+            .sheet(isPresented: $showModal) {
+                SheetView(isShown: $showModal, studyhours: studyhours, studyminutes: studyminutes, studyseconds: studyseconds, breakhours: breakhours, breakminutes: breakminutes, breakseconds: breakseconds)
+            }
+            
             Text("Select an item")
             
         }
