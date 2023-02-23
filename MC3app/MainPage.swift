@@ -39,14 +39,14 @@ struct MainPage: View {
                     ZStack{
                         
                         NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
-                            Text("       Cards                  ")
+                            Text("main_loglist")
+                                .foregroundColor(Color("ButtonText"))
                         }
+                        .frame(minWidth: 200.0, minHeight: 40.0)
                         .disabled(items.count == 0 ? true:false)
                         .background(Color("ButtonBackground"))
                         .cornerRadius(12)
-                        .foregroundColor(Color("ButtonText"))
                         .font(.system(size:25, weight:.semibold))
-                        .buttonStyle(.bordered)
                         .offset(x:40, y:-523)
                         
                         Image("LeafSmall")
