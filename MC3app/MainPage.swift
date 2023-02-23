@@ -51,9 +51,10 @@ struct MainPage: View {
                         .frame(width: 180, height: 180)
                         .offset(x:-31, y: -492)
                 }
-            }.background(Color("Background"))
-                .edgesIgnoringSafeArea(.all)
-        }
+            }
+            .background(Color("Background"))
+            .edgesIgnoringSafeArea(.all)
+        }.accentColor(Color("TextColor"))
     }
 }
 
