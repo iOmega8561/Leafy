@@ -21,6 +21,8 @@
 "tired" = "Tired";
 "sheet_mandatory" = "This text field is mandatory";
 "sheet_optional" = "This text field is optional";
+"sheet_writemore_placeholder" = "Talk about your emotions";
+"sheet_nicewords_placeholder" = "Remember to be kind with yourself";
 "sheet_subject" = "What was the subject?";
 "sheet_whatdidustudy" = "What did you study?";
 "sheet_howdoyoufeel" = "How do you feel?";
