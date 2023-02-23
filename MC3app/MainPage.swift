@@ -18,47 +18,57 @@ struct MainPage: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationStack {
-            ZStack {
-                Color("background")
-                
-                VStack(spacing:20) {
-                    Image("Tree")
-                        .offset(y:139)
-                    NavigationLink(destination: StopWatch()) {
-                        Text("\nNew Study Session\n")
-                    }
-                    .isDetailLink(true)
-                    .background(Color("ButtonBackground"))
-                    .cornerRadius(12)
-                    .foregroundColor(Color("ButtonText"))
-                    .font(.system(size:25, weight:.semibold))
-                    .offset(y:100)
-                    .buttonStyle(.bordered)
+        GeometryReader { proxy in
+            NavigationStack {
+                ZStack {
+                    Color("background")
                     
-                    ZStack{
+                    VStack() {
                         
-                        NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
-                            Text("main_loglist")
-                                .foregroundColor(Color("ButtonText"))
+                        HStack {
+                            Spacer()
+                            
+                            ZStack{
+                                
+                                NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
+                                    Text("main_loglist")
+                                        .font(.system(size:25, weight:.semibold))
+                                        .foregroundColor(Color("ButtonText"))
+                                }
+                                .frame(minWidth: 200.0, minHeight: 40.0)
+                                .disabled(items.count == 0 ? true:false)
+                                .background(Color("ButtonBackground"))
+                                .cornerRadius(12)
+                                
+                                Image("LeafSmall")
+                                    .resizable()
+                                    .frame(width: 180, height: 180)
+                                    .offset(x:-60, y: 30)
+                            }.grayscale(items.count == 0 ? 0.8:0.0)
+                            
+                            Spacer().frame(maxWidth: proxy.size.width * 0.15)
                         }
-                        .frame(minWidth: 200.0, minHeight: 40.0)
-                        .disabled(items.count == 0 ? true:false)
-                        .background(Color("ButtonBackground"))
-                        .cornerRadius(12)
-                        .font(.system(size:25, weight:.semibold))
-                        .offset(x:40, y:-523)
                         
-                        Image("LeafSmall")
-                            .resizable()
-                            .frame(width: 180, height: 180)
-                            .offset(x:-31, y: -492)
-                    }.grayscale(items.count == 0 ? 0.8:0.0)
+                        Spacer().frame(maxHeight: 100.0)
+                        
+                        VStack(spacing: -20) {
+                            Image("Tree")
+                            NavigationLink(destination: StopWatch()) {
+                                Text("main_startsession")
+                                    .font(.system(size:30, weight:.semibold))
+                                    .foregroundColor(Color("ButtonText"))
+                            }
+                            .isDetailLink(true)
+                            .frame(minWidth: proxy.size.width * 0.65, minHeight: proxy.size.height * 0.12)
+                            .background(Color("ButtonBackground"))
+                            .cornerRadius(12)
+                        }
+                    }
                 }
+                .edgesIgnoringSafeArea(.all)
             }
-            .edgesIgnoringSafeArea(.all)
+            .accentColor(Color("TextColor"))
         }
-        .accentColor(Color("TextColor"))
     }
 }
 
