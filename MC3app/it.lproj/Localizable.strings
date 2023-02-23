@@ -26,3 +26,8 @@
 "sheet_howdoyoufeel" = "Come ti senti adesso?";
 "sheet_writemore" = "Vuoi dire di più?";
 "sheet_saynice" = "Lasciati belle parole!";
+"details_title" = "Dettagli";
+"details_studytime" = "Tempo di studio:";
+"details_breaktime" = "Tempo di pause:";
+"details_nicewords" = "Le tue belle parole";
+"details_writemore" = "Altro sui sentimenti";
