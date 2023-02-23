@@ -5,6 +5,8 @@
   Created by Giuseppe Rocco on 23/02/23.
   
 */
+"cdialog_text" = "Are you sure? All data will be lost!";
+"cdialog_confirm" = "Yes, let me exit.";
 "title_loglist" = "Your cards";
 "title_newlog" = "New card";
 "button_back" = "Back";
