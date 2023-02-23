@@ -12,7 +12,10 @@ var backBTN: some View {
     NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true)) {
         HStack {
             Image(systemName: "chevron.backward")
-            Text("Back")
+                .renderingMode(.template)
+                .foregroundColor(Color("TextColor"))
+            Text("button_back")
+                .foregroundColor(Color("TextColor"))
         }
     }
 }
@@ -99,13 +102,6 @@ struct StopWatch: View {
                         .navigationBarItems(leading: backBTN)) {
                         Text("Finish").font(.largeTitle)
                     }
-                    
-                    /*Button("Finish") {
-                        showModal.toggle()
-                    }.font(.largeTitle)
-                        .sheet(isPresented: $showModal) {
-                            SheetView(showModal: $showModal, studyhours: Int16(stopWatchManager.hours), studyminutes: Int16(stopWatchManager.minutes), studyseconds: Int16(stopWatchManager.seconds), breakhours: Int16(stopWatchManager.hours_2), breakminutes: Int16(stopWatchManager.minutes_2), breakseconds: Int16(stopWatchManager.seconds_2))
-                        }*/
                 }
             }
         }

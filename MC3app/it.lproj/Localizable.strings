@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  MC3app
+
+  Created by Giuseppe Rocco on 23/02/23.
+  
+*/
+"title_loglist" = "Le tue schede";
+"title_newlog" = "Nuova scheda";
+"button_back" = "Indietro";
+"button_exit" = "Esci";
+"button_save" = "Salva";
+"angry" = "Arrabiato";
+"happy" = "Felice";
+"sad" = "Triste";
+"surprised" = "Sorpreso";
+"tired" = "Stanco";
+"sheet_mandatory" = "Questo campo è richiesto";
+"sheet_optional" = "Questo campo è opzionale";
+"sheet_subject" = "Qual'era la materia?";
+"sheet_whatdidustudy" = "Cosa hai studiato?";
+"sheet_howdoyoufeel" = "Come ti senti adesso?";
+"sheet_writemore" = "Vuoi dire di più?";
+"sheet_saynice" = "Lasciati belle parole!";
