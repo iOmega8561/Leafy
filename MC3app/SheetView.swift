@@ -8,17 +8,6 @@
 import SwiftUI
 import CoreData
 
-extension String {
-    var capitalizedSentence: String {
-        // 1
-        let firstLetter = self.prefix(1).capitalized
-        // 2
-        let remainingLetters = self.dropFirst().lowercased()
-        // 3
-        return firstLetter + remainingLetters
-    }
-}
-
 struct NewItem {
     var timestamp: Date = Date()
 
@@ -55,6 +44,8 @@ struct SheetView: View {
     
     @State private var actionSheet: Bool = false
     @State var item: NewItem = NewItem()
+    
+    @State var triedToSave: Bool = false
     
     @Binding var isShown: Bool
     
@@ -107,7 +98,7 @@ struct SheetView: View {
                             .cornerRadius(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 9)
-                                    .stroke(Color("TextColor"), lineWidth: 2.5)
+                                    .stroke(triedToSave == true ? Color("Destructive"):Color("TextColor"), lineWidth: 2.5)
                             )
                         
                         Spacer()
@@ -134,7 +125,7 @@ struct SheetView: View {
                             .cornerRadius(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 9)
-                                    .stroke(Color("TextColor"), lineWidth: 2.5)
+                                    .stroke(triedToSave == true ? Color("Destructive"):Color("TextColor"), lineWidth: 2.5)
                             )
                         
                         Spacer()
@@ -159,7 +150,6 @@ struct SheetView: View {
                                     Button(action: {item.emotion = Int16(n) }) {
                                         Image(imgs[n])
                                             .resizable()
-                                            .colorMultiply(item.emotion == Int16(n) ? .yellow:.white)
                                             .scaledToFit()
                                             .frame(width: 90.0)
                                     }
@@ -169,11 +159,11 @@ struct SheetView: View {
                                         .frame(maxHeight: 25.0)
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 7.0)
-                                                .foregroundColor(.white)
+                                                .foregroundColor(item.emotion == Int16(n) ? Color("ButtonBackground"):.white)
                                                 .frame(maxWidth: 85.0, maxHeight: 20.0)
                                                 .overlay(
                                                     Text(LocalizedStringKey(imgs[n]))
-                                                        .foregroundColor(Color("TextColor"))
+                                                        .foregroundColor(item.emotion == Int16(n) ? Color("ButtonText"):Color("TextColor"))
                                                 )
                                         )
                                 }
@@ -199,7 +189,7 @@ struct SheetView: View {
                     HStack {
                         Spacer()
                         
-                        TextField("sheet_optional", text: $item.writemore, axis: .vertical)
+                        TextField("sheet_writemore_placeholder", text: $item.writemore, axis: .vertical)
                             .foregroundColor(Color("TextColor"))
                             .lineLimit(5)
                             .padding(10)
@@ -225,7 +215,7 @@ struct SheetView: View {
                     HStack {
                         Spacer()
                         
-                        TextField("sheet_optional", text: $item.saynicetoyou, axis: .vertical)
+                        TextField("sheet_nicewords_placeholder", text: $item.saynicetoyou, axis: .vertical)
                             .foregroundColor(Color("TextColor"))
                             .lineLimit(5)
                             .padding(10)
@@ -256,7 +246,7 @@ struct SheetView: View {
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        CustomButton(label: LocalizedStringKey("button_save"), action: { if saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) { isShown = false } /*; dismiss()*/ }, type: 0)
+                        CustomButton(label: LocalizedStringKey("button_save"), action: { if saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) { isShown = false } else { triedToSave = true } /*; dismiss()*/ }, type: 0)
                     }
                 }
             }
