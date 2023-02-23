@@ -189,7 +189,7 @@ struct SheetView: View {
                     HStack {
                         Spacer()
                         
-                        TextField("sheet_optional", text: $item.writemore, axis: .vertical)
+                        TextField("sheet_writemore_placeholder", text: $item.writemore, axis: .vertical)
                             .foregroundColor(Color("TextColor"))
                             .lineLimit(5)
                             .padding(10)
@@ -215,7 +215,7 @@ struct SheetView: View {
                     HStack {
                         Spacer()
                         
-                        TextField("sheet_optional", text: $item.saynicetoyou, axis: .vertical)
+                        TextField("sheet_nicewords_placeholder", text: $item.saynicetoyou, axis: .vertical)
                             .foregroundColor(Color("TextColor"))
                             .lineLimit(5)
                             .padding(10)

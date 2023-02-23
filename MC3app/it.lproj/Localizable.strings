@@ -21,6 +21,8 @@
 "tired" = "Stanco";
 "sheet_mandatory" = "Questo campo è richiesto";
 "sheet_optional" = "Questo campo è opzionale";
+"sheet_writemore_placeholder" = "Parla delle tue emozioni";
+"sheet_nicewords_placeholder" = "Ricorda, sii gentile con te stesso";
 "sheet_subject" = "Qual'era la materia?";
 "sheet_whatdidustudy" = "Cosa hai studiato?";
 "sheet_howdoyoufeel" = "Come ti senti adesso?";
