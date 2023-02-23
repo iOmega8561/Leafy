@@ -246,11 +246,11 @@ struct SheetView: View {
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
                         CustomButton(label: LocalizedStringKey("button_exit"), action: { actionSheet = true/*; dismiss()*/ }, type: 1)
-                            .confirmationDialog("Are you sure? All data will be lost!", isPresented: $actionSheet, titleVisibility: .visible) {
+                            .confirmationDialog("cdialog_text", isPresented: $actionSheet, titleVisibility: .visible) {
                                 Button(role: .destructive) {
                                     isShown = false
                                 } label: {
-                                    Text("Yes, let me Exit.")
+                                    Text("cdialog_confirm")
                                 }
                             }
                     }

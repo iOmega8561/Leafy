@@ -5,6 +5,8 @@
   Created by Giuseppe Rocco on 23/02/23.
   
 */
+"cdialog_text" = "Sei sicuro? Tutti i dati andranno persi!";
+"cdialog_confirm" = "Si, fammi uscire.";
 "title_loglist" = "Le tue schede";
 "title_newlog" = "Nuova scheda";
 "button_back" = "Indietro";

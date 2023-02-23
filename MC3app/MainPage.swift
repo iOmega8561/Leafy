@@ -11,12 +11,18 @@ import CoreData
 struct MainPage: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        animation: .default)
+    
+    private var items: FetchedResults<Item>
+
     var body: some View {
         NavigationStack {
             ZStack {
                 Color("background")
                 
-                VStack(spacing:20){
+                VStack(spacing:20) {
                     Image("Tree")
                         .offset(y:139)
                     NavigationLink(destination: StopWatch()) {
@@ -35,6 +41,7 @@ struct MainPage: View {
                         NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
                             Text("       Cards                  ")
                         }
+                        .disabled(items.count == 0 ? true:false)
                         .background(Color("ButtonBackground"))
                         .cornerRadius(12)
                         .foregroundColor(Color("ButtonText"))
@@ -46,11 +53,12 @@ struct MainPage: View {
                             .resizable()
                             .frame(width: 180, height: 180)
                             .offset(x:-31, y: -492)
-                    }
+                    }.grayscale(items.count == 0 ? 0.8:0.0)
                 }
             }
             .edgesIgnoringSafeArea(.all)
-        }.accentColor(Color("TextColor"))
+        }
+        .accentColor(Color("TextColor"))
     }
 }
 
