@@ -46,7 +46,7 @@ struct DetailView: View {
                                         HStack {
                                             Spacer().frame(maxWidth: 20.0)
                                             
-                                            Image(systemName: imgs[Int(item.emotion)])
+                                            Image(imgs[Int(item.emotion)])
                                                 .resizable()
                                                 .scaledToFit()
                                                 .frame(maxWidth: 70.0)

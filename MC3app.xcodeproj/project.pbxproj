@@ -20,6 +20,7 @@
 		E3A4E3A529A3B7B400D998C1 /* MC3appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E3A429A3B7B400D998C1 /* MC3appTests.swift */; };
 		E3A4E3AF29A3B7B400D998C1 /* MC3appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E3AE29A3B7B400D998C1 /* MC3appUITests.swift */; };
 		E3A4E3B129A3B7B400D998C1 /* MC3appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E3B029A3B7B400D998C1 /* MC3appUITestsLaunchTests.swift */; };
+		E3CED42C29A78A5C00728D73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3CED42E29A78A5C00728D73 /* Localizable.strings */; };
 		E3DD8F0E29A5019F00F88268 /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3DD8F0D29A5019F00F88268 /* MainPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		E3A4E3AA29A3B7B400D998C1 /* MC3appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MC3appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A4E3AE29A3B7B400D998C1 /* MC3appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appUITests.swift; sourceTree = "<group>"; };
 		E3A4E3B029A3B7B400D998C1 /* MC3appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3CED42D29A78A5C00728D73 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E3CED42F29A78A7B00728D73 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E3DD8F0D29A5019F00F88268 /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +115,7 @@
 				E3A4E39029A3B7B300D998C1 /* LogList.swift */,
 				E3DD8F0D29A5019F00F88268 /* MainPage.swift */,
 				DD90564629A527A2001D3534 /* SheetView.swift */,
+				E3CED42E29A78A5C00728D73 /* Localizable.strings */,
 				DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */,
 				DD90564429A52323001D3534 /* StopwatchUnitView.swift */,
 				DD8770AA29A64B0D00A1E099 /* DetailView.swift */,
@@ -226,6 +230,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = E3A4E38229A3B7B200D998C1;
 			productRefGroup = E3A4E38C29A3B7B300D998C1 /* Products */;
@@ -245,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */,
+				E3CED42C29A78A5C00728D73 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,11 +320,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		E3CED42E29A78A5C00728D73 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3CED42D29A78A5C00728D73 /* en */,
+				E3CED42F29A78A7B00728D73 /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		E3A4E3B229A3B7B400D998C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -365,6 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -379,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -419,6 +440,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				"INFOPLIST_KEY_UIUserInterfaceStyle[sdk=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
