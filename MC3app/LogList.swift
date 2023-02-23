@@ -25,7 +25,7 @@ struct LogList: View {
     
     private var items: FetchedResults<Item>
     
-    @State var showModal: Bool = false
+    @State var showModal: Bool
     
     var studyhours: Int16 = 0
     var studyminutes: Int16 = 0
@@ -33,6 +33,24 @@ struct LogList: View {
     var breakhours: Int16 = 0
     var breakminutes: Int16 = 0
     var breakseconds: Int16 = 0
+    
+    init(showModal: Bool = false, studyhours: Int16 = 0, studyminutes: Int16 = 0, studyseconds: Int16 = 0, breakhours: Int16 = 0, breakminutes: Int16 = 0, breakseconds: Int16 = 0) {
+        
+        self._showModal = State(initialValue: showModal)
+        self.studyhours = studyhours
+        self.studyminutes = studyminutes
+        self.studyseconds = studyseconds
+        self.breakhours = breakhours
+        self.breakminutes = breakminutes
+        self.breakseconds = breakseconds
+        
+        
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+        
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+    }
     
     var body: some View {
         NavigationStack {
@@ -46,7 +64,6 @@ struct LogList: View {
                                 Image(imgs[Int(item.emotion)])
                                     .resizable()
                                     .scaledToFit()
-                                    
                                     .frame(maxWidth: 50.0)
                                 
                                 Spacer().frame(maxHeight: 6.0)
@@ -71,23 +88,25 @@ struct LogList: View {
                             }
                         }
                     }
-                    .listRowSeparatorTint(.brown)
+                    .listRowSeparatorTint(Color("TextColor"))
                     .listRowSeparator(.automatic)
                     .listRowBackground(Color(red: 0.973, green: 0.973, blue: 0.968))
                 }
                 .onDelete(perform: deleteItems)
             }
-            .background(Color(red: 0.925, green: 0.929, blue: 0.912))
+            .navigationTitle("title_loglist")
+            .background(Color("background"))
             .scrollContentBackground(.hidden)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
+                        .foregroundColor(Color("TextColor"))
                 }
             }
             .sheet(isPresented: $showModal) {
                 SheetView(isShown: $showModal, studyhours: studyhours, studyminutes: studyminutes, studyseconds: studyseconds, breakhours: breakhours, breakminutes: breakminutes, breakseconds: breakseconds)
             }
-        }
+        }.accentColor(Color("TextColor"))
     }
 
     private func deleteItems(offsets: IndexSet) {

@@ -8,12 +8,16 @@
 import SwiftUI
 import CoreData
 
-let loremipsum = """
-Lorem ipsum dolor sit amet
-consectetur adipiscing elit.
-Morbi in ex eleifend, faucibus
-libero ac, lobortis leo.
-"""
+extension String {
+    var capitalizedSentence: String {
+        // 1
+        let firstLetter = self.prefix(1).capitalized
+        // 2
+        let remainingLetters = self.dropFirst().lowercased()
+        // 3
+        return firstLetter + remainingLetters
+    }
+}
 
 struct NewItem {
     var timestamp: Date = Date()
@@ -26,25 +30,21 @@ struct NewItem {
 }
 
 struct CustomButton: View {
-    var label: String
+    var label: LocalizedStringKey
     var action: ()->Void
     var type: Int
     
     var body: some View {
         
         Button(action: action) {
-            Rectangle()
-                .fill(type == 1 ? .red:.green)
-                .opacity(0.9)
-                .overlay() {
-                    Text(label)
-                        .foregroundColor(.white)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                }
-                .frame(width: 90.0, height: 30.0)
-                .cornerRadius(20.0)
-                .shadow(radius: 5.0)
+            if type == 1 {
+                Image(systemName: "chevron.backward")
+                    .renderingMode(.template)
+                    .foregroundColor(Color("TextColor"))
+            }
+            
+            Text(label)
+                .foregroundColor(Color("TextColor"))
         }
     }
 }
@@ -53,7 +53,7 @@ struct SheetView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) var dismiss
     
-    @State private var selectedEmotion: Int16 = 0
+    @State private var actionSheet: Bool = false
     @State var item: NewItem = NewItem()
     
     @Binding var isShown: Bool
@@ -65,27 +65,49 @@ struct SheetView: View {
     var breakminutes: Int16 = 0
     var breakseconds: Int16 = 0
     
+    
+    init(isShown: Binding<Bool>, studyhours: Int16 = 0, studyminutes: Int16 = 0, studyseconds: Int16 = 0, breakhours: Int16 = 0, breakminutes: Int16 = 0, breakseconds: Int16 = 0) {
+        
+        self._isShown = isShown
+        self.studyhours = studyhours
+        self.studyminutes = studyminutes
+        self.studyseconds = studyseconds
+        self.breakhours = breakhours
+        self.breakminutes = breakminutes
+        self.breakseconds = breakseconds
+        
+        
+        //Use this if NavigationBarTitle is with Large Font
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+        
+        //Use this if NavigationBarTitle is with displayMode = .inline
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+    }
+    
     var body: some View {
         GeometryReader { proxy in
             NavigationStack {
                 ScrollView {
                     HStack {
                         Spacer().frame(maxWidth: 30.0)
-                        Text("Subject/s").font(.system(size: 30.0, weight: .bold))
+                        Text("sheet_subject")
+                            .font(.system(size: 30.0, weight: .bold))
+                            .foregroundColor(Color("TextColor"))
                         Spacer()
                     }
                     
                     HStack {
                         Spacer()
                         
-                        TextField(loremipsum, text: $item.subject)
+                        TextField("sheet_mandatory", text: $item.subject)
+                            .foregroundColor(Color("TextColor"))
                             .padding(10)
                             .font(.system(size: 20.0))
                             .frame(maxWidth: proxy.size.width * 0.85, minHeight: 50)
                             .cornerRadius(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 9)
-                                    .stroke(Color.black, lineWidth: 2.5)
+                                    .stroke(Color("TextColor"), lineWidth: 2.5)
                             )
                         
                         Spacer()
@@ -94,7 +116,9 @@ struct SheetView: View {
                     HStack {
                         Spacer().frame(maxWidth: 30.0)
                         
-                        Text("More in deep").font(.system(size: 30.0, weight: .bold))
+                        Text("sheet_whatdidustudy")
+                            .font(.system(size: 30.0, weight: .bold))
+                            .foregroundColor(Color("TextColor"))
                         
                         Spacer()
                     }
@@ -102,14 +126,15 @@ struct SheetView: View {
                     HStack {
                         Spacer()
                         
-                        TextField(loremipsum, text: $item.whatdidyoustudy)
+                        TextField("sheet_mandatory", text: $item.whatdidyoustudy)
+                            .foregroundColor(Color("TextColor"))
                             .padding(10)
                             .font(.system(size: 20.0))
                             .frame(maxWidth: proxy.size.width * 0.85, minHeight: 50)
                             .cornerRadius(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 9)
-                                    .stroke(Color.black, lineWidth: 2.5)
+                                    .stroke(Color("TextColor"), lineWidth: 2.5)
                             )
                         
                         Spacer()
@@ -118,7 +143,9 @@ struct SheetView: View {
                     HStack {
                         Spacer().frame(maxWidth: 30.0)
                         
-                        Text("How do you feel?").font(.system(size: 30.0, weight: .bold))
+                        Text("sheet_howdoyoufeel")
+                            .font(.system(size: 30.0, weight: .bold))
+                            .foregroundColor(Color("TextColor"))
                         
                         Spacer()
                     }
@@ -127,14 +154,28 @@ struct SheetView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             
-                            ForEach(1..<6) { n in
-                                Button(action: {selectedEmotion = Int16(n) }) {
-                                    Image(imgs[n])
-                                        .renderingMode(.template)
-                                        .resizable()
-                                        .foregroundColor(n == selectedEmotion ? .green:.black)
-                                        .scaledToFit()
-                                        .frame(width: 90.0)
+                            ForEach(0..<5) { n in
+                                VStack {
+                                    Button(action: {item.emotion = Int16(n) }) {
+                                        Image(imgs[n])
+                                            .resizable()
+                                            .colorMultiply(item.emotion == Int16(n) ? .yellow:.white)
+                                            .scaledToFit()
+                                            .frame(width: 90.0)
+                                    }
+                                    
+                                    RoundedRectangle(cornerRadius: 10.0)
+                                        .foregroundColor(Color("ButtonBackground"))
+                                        .frame(maxHeight: 25.0)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 7.0)
+                                                .foregroundColor(.white)
+                                                .frame(maxWidth: 85.0, maxHeight: 20.0)
+                                                .overlay(
+                                                    Text(LocalizedStringKey(imgs[n]))
+                                                        .foregroundColor(Color("TextColor"))
+                                                )
+                                        )
                                 }
                             }
                             
@@ -143,20 +184,23 @@ struct SheetView: View {
                     .frame(maxWidth: proxy.size.width * 0.85, minHeight: 70.0)
                     .transition(.move(edge: .bottom))
                     .cornerRadius(10.0)
-                    .shadow(radius: 10.0)
+                    .shadow(color: Color("ButtonBackground"), radius: 2.0)
                     
                     
                     
                     HStack {
                         Spacer().frame(maxWidth: 30.0)
-                        Text("Write something more").font(.system(size: 30.0, weight: .bold))
+                        Text("sheet_writemore")
+                            .font(.system(size: 30.0, weight: .bold))
+                            .foregroundColor(Color("TextColor"))
                         Spacer()
                     }
                     
                     HStack {
                         Spacer()
                         
-                        TextField(loremipsum, text: $item.writemore, axis: .vertical)
+                        TextField("sheet_optional", text: $item.writemore, axis: .vertical)
+                            .foregroundColor(Color("TextColor"))
                             .lineLimit(5)
                             .padding(10)
                             .font(.system(size: 20.0))
@@ -164,7 +208,7 @@ struct SheetView: View {
                             .cornerRadius(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 9)
-                                    .stroke(Color.black, lineWidth: 2.5)
+                                    .stroke(Color("TextColor"), lineWidth: 2.5)
                             )
                         
                         Spacer()
@@ -172,14 +216,17 @@ struct SheetView: View {
                     
                     HStack {
                         Spacer().frame(maxWidth: 30.0)
-                        Text("Something nice for you!").font(.system(size: 30.0, weight: .bold))
+                        Text("sheet_saynice")
+                            .font(.system(size: 30.0, weight: .bold))
+                            .foregroundColor(Color("TextColor"))
                         Spacer()
                     }
                     
                     HStack {
                         Spacer()
                         
-                        TextField(loremipsum, text: $item.saynicetoyou, axis: .vertical)
+                        TextField("sheet_optional", text: $item.saynicetoyou, axis: .vertical)
+                            .foregroundColor(Color("TextColor"))
                             .lineLimit(5)
                             .padding(10)
                             .font(.system(size: 20.0))
@@ -187,28 +234,41 @@ struct SheetView: View {
                             .cornerRadius(10.0)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 9)
-                                    .stroke(Color.black, lineWidth: 2.5)
+                                    .stroke(Color("TextColor"), lineWidth: 2.5)
                             )
                         
                         Spacer()
                     }
                 }
-                .navigationTitle("New Log")
+                .background(Color("background"))
+                .navigationTitle("title_newlog")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                        CustomButton(label: "Back  ", action: { isShown = false/*; dismiss()*/ }, type: 1)
+                        CustomButton(label: LocalizedStringKey("button_exit"), action: { actionSheet = true/*; dismiss()*/ }, type: 1)
+                            .confirmationDialog("Are you sure? All data will be lost!", isPresented: $actionSheet, titleVisibility: .visible) {
+                                Button(role: .destructive) {
+                                    isShown = false
+                                } label: {
+                                    Text("Yes, let me Exit.")
+                                }
+                            }
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        CustomButton(label: "Save  ", action: { saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds); isShown = false/*; dismiss()*/ }, type: 0)
+                        CustomButton(label: LocalizedStringKey("button_save"), action: { if saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) { isShown = false } /*; dismiss()*/ }, type: 0)
                     }
                 }
             }
         }
     }
     
-    private func saveItem(item: NewItem, shours: Int16, sminutes: Int16, sseconds: Int16, bhours: Int16, bminutes: Int16, bseconds: Int16) {
+    private func saveItem(item: NewItem, shours: Int16, sminutes: Int16, sseconds: Int16, bhours: Int16, bminutes: Int16, bseconds: Int16) -> Bool {
+        
+        if item.subject == "" || item.whatdidyoustudy == "" {
+            return false
+        }
+        
         let newItem = Item(context: viewContext)
         newItem.timestamp = Date()
         newItem.emotion = item.emotion
@@ -225,6 +285,7 @@ struct SheetView: View {
 
         do {
             try viewContext.save()
+            return true
         } catch {
             // Replace this implementation with code to handle the error appropriately.
             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
