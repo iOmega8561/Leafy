@@ -14,9 +14,9 @@ struct MainPage: View {
     var body: some View {
         NavigationStack {
             
-            VStack{
+            VStack(spacing:20){
                 Image("Tree")
-                    .offset(y:127)
+                    .offset(y:139)
                 NavigationLink(destination: StopWatch()) {
                     Text("\nNew Study Session\n")
                 }
@@ -27,12 +27,32 @@ struct MainPage: View {
                 .font(.system(size:25, weight:.semibold))
                 .offset(y:100)
                 .buttonStyle(.bordered)
-               
                 
-                NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
-                    Text("LIST")
-                }.offset(y:-523)
-            }
+            
+                
+                ZStack{
+                  
+                    
+                    
+                    NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
+                        Text("       Cards                  ")
+                    }
+                    .background(Color("ButtonBackground"))
+                    .cornerRadius(12)
+                    .foregroundColor(Color("ButtonText"))
+                    .font(.system(size:25, weight:.semibold))
+                    .buttonStyle(.bordered)
+                    .offset(x:40, y:-523)
+                    
+                   
+                    
+                    Image("LeafSmall")
+                        .resizable()
+                        .frame(width: 180, height: 180)
+                        .offset(x:-31, y: -492)
+                }
+            }.background(Color("Background"))
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }
