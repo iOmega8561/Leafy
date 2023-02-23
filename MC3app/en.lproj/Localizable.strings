@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  MC3app
+
+  Created by Giuseppe Rocco on 23/02/23.
+  
+*/
+"title_newlog" = "New card";
+"button_back" = "Back";
+"button_exit" = "Exit";
+"button_save" = "Save";
+"angry" = "Angry";
+"happy" = "Happy";
+"sad" = "Sad";
+"surprised" = "Surprised";
+"tired" = "Tired";
+"sheet_mandatory" = "This text field is mandatory";
+"sheet_optional" = "This text field is optional";
+"sheet_subject" = "What was the subject?";
+"sheet_whatdidustudy" = "What did you study?";
+"sheet_howdoyoufeel" = "How do you feel?";
+"sheet_writemore" = "Want to write more?";
+"sheet_saynice" = "Nice words for you!";

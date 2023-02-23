@@ -46,7 +46,6 @@ struct LogList: View {
                                 Image(imgs[Int(item.emotion)])
                                     .resizable()
                                     .scaledToFit()
-                                    
                                     .frame(maxWidth: 50.0)
                                 
                                 Spacer().frame(maxHeight: 6.0)
@@ -71,17 +70,18 @@ struct LogList: View {
                             }
                         }
                     }
-                    .listRowSeparatorTint(.brown)
+                    .listRowSeparatorTint(Color("TextColor"))
                     .listRowSeparator(.automatic)
                     .listRowBackground(Color(red: 0.973, green: 0.973, blue: 0.968))
                 }
                 .onDelete(perform: deleteItems)
             }
-            .background(Color(red: 0.925, green: 0.929, blue: 0.912))
+            .background(Color("background"))
             .scrollContentBackground(.hidden)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
+                        .foregroundColor(Color("TextColor"))
                 }
             }
             .sheet(isPresented: $showModal) {
