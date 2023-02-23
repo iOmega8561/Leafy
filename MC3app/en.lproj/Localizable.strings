@@ -26,3 +26,8 @@
 "sheet_howdoyoufeel" = "How do you feel?";
 "sheet_writemore" = "Want to write more?";
 "sheet_saynice" = "Nice words for you!";
+"details_title" = "Details";
+"details_studytime" = "Study time:";
+"details_breaktime" = "Break time:";
+"details_nicewords" = "Nice words from you";
+"details_writemore" = "More about feelings";
