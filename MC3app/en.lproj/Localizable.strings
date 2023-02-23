@@ -21,8 +21,15 @@
 "tired" = "Tired";
 "sheet_mandatory" = "This text field is mandatory";
 "sheet_optional" = "This text field is optional";
+"sheet_writemore_placeholder" = "Talk about your emotions";
+"sheet_nicewords_placeholder" = "Remember to be kind with yourself";
 "sheet_subject" = "What was the subject?";
 "sheet_whatdidustudy" = "What did you study?";
 "sheet_howdoyoufeel" = "How do you feel?";
 "sheet_writemore" = "Want to write more?";
 "sheet_saynice" = "Nice words for you!";
+"details_title" = "Details";
+"details_studytime" = "Study time:";
+"details_breaktime" = "Break time:";
+"details_nicewords" = "Nice words from you";
+"details_writemore" = "More about feelings";

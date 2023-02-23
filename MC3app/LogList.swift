@@ -20,7 +20,7 @@ struct LogList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)],
         animation: .default)
     
     private var items: FetchedResults<Item>
@@ -69,12 +69,15 @@ struct LogList: View {
                                 Spacer().frame(maxHeight: 6.0)
                                 
                                 Text(item.timestamp!, formatter: itemFormatter)
+                                    .foregroundColor(Color("TextColor"))
                             }
                             Spacer().frame(maxWidth: 20.0)
                             VStack {
                                 
                                 HStack {
-                                    Text(item.subject!).font(.system(size: 23.0))
+                                    Text(item.subject!)
+                                        .font(.system(size: 23.0))
+                                        .foregroundColor(Color("TextColor"))
                                     Spacer()
                                 }
                                 
@@ -82,6 +85,7 @@ struct LogList: View {
                                 
                                 HStack {
                                     Text("\(item.studyhours)h \(item.studyminutes)m")
+                                        .foregroundColor(Color("TextColor"))
                                     Spacer()
                                 }
                                 
