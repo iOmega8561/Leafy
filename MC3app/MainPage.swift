@@ -52,7 +52,7 @@ struct MainPage: View {
                         .offset(x:-31, y: -492)
                 }
             }
-            .background(Color("Background"))
+            .background(Color("background"))
             .edgesIgnoringSafeArea(.all)
         }.accentColor(Color("TextColor"))
     }
