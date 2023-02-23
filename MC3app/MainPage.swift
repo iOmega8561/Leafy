@@ -28,23 +28,24 @@ struct MainPage: View {
                         HStack {
                             Spacer()
                             
-                            ZStack{
+                            NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
                                 
-                                NavigationLink(destination: LogList().environment(\.managedObjectContext, viewContext)) {
+                                ZStack {
                                     Text("main_loglist")
                                         .font(.system(size:25, weight:.semibold))
                                         .foregroundColor(Color("ButtonText"))
+                                        .frame(minWidth: 200.0, minHeight: 40.0)
+                                        .background(Color("ButtonBackground"))
+                                        .cornerRadius(12)
+                                    Image("LeafSmall")
+                                        .resizable()
+                                        .frame(width: 180, height: 180)
+                                        .offset(x:-60, y: 30)
                                 }
-                                .frame(minWidth: 200.0, minHeight: 40.0)
-                                .disabled(items.count == 0 ? true:false)
-                                .background(Color("ButtonBackground"))
-                                .cornerRadius(12)
                                 
-                                Image("LeafSmall")
-                                    .resizable()
-                                    .frame(width: 180, height: 180)
-                                    .offset(x:-60, y: 30)
-                            }.grayscale(items.count == 0 ? 0.8:0.0)
+                            }
+                            .disabled(items.count == 0 ? true:false)
+                            .grayscale(items.count == 0 ? 0.8:0.0)
                             
                             Spacer().frame(maxWidth: proxy.size.width * 0.15)
                         }
