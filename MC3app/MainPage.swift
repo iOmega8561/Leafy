@@ -37,15 +37,16 @@ struct MainPage: View {
                                         .frame(minWidth: 200.0, minHeight: 40.0)
                                         .background(Color("ButtonBackground"))
                                         .cornerRadius(12)
-                                    Image("LeafSmall")
+                                    Image("Book")
                                         .resizable()
-                                        .frame(width: 180, height: 180)
-                                        .offset(x:-60, y: 30)
+                                        .scaledToFit()
+                                        .frame(width: 120)
+                                        .offset(x:-70, y: -5)
                                 }
                                 
                             }
                             .disabled(items.count == 0 ? true:false)
-                            .grayscale(items.count == 0 ? 0.8:0.0)
+                            //.grayscale(items.count == 0 ? 0.8:0.0)
                             
                             Spacer().frame(maxWidth: proxy.size.width * 0.15)
                         }
