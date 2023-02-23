@@ -33,7 +33,7 @@ struct MainPage: View {
                     Text("LIST")
                 }.offset(y:-523)
             }
-        }
+        }.accentColor(Color("TextColor"))
     }
 }
 
