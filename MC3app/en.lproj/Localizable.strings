@@ -5,6 +5,7 @@
   Created by Giuseppe Rocco on 23/02/23.
   
 */
+"title_loglist" = "Your cards";
 "title_newlog" = "New card";
 "button_back" = "Back";
 "button_exit" = "Exit";

@@ -5,6 +5,7 @@
   Created by Giuseppe Rocco on 23/02/23.
   
 */
+"title_loglist" = "Le tue schede";
 "title_newlog" = "Nuova scheda";
 "button_back" = "Indietro";
 "button_exit" = "Esci";
