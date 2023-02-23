@@ -5,6 +5,8 @@
   Created by Giuseppe Rocco on 23/02/23.
   
 */
+"main_loglist" = "     Cards";
+"main_startsession" = "Let's study!";
 "cdialog_text" = "Are you sure? All data will be lost!";
 "cdialog_confirm" = "Yes, let me exit.";
 "title_loglist" = "Your cards";
