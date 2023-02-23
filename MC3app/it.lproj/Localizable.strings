@@ -5,7 +5,7 @@
   Created by Giuseppe Rocco on 23/02/23.
   
 */
-"main_loglist" = "Schede";
+"main_loglist" = "      Schede";
 "main_startsession" = "Inizia a studiare!";
 "cdialog_text" = "Sei sicuro? Tutti i dati andranno persi!";
 "cdialog_confirm" = "Si, fammi uscire.";
