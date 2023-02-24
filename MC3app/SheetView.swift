@@ -238,7 +238,14 @@ struct SheetView: View {
                         CustomButton(label: LocalizedStringKey("button_exit"), action: { actionSheet = true/*; dismiss()*/ }, type: 1)
                             .confirmationDialog("cdialog_text", isPresented: $actionSheet, titleVisibility: .visible) {
                                 Button(role: .destructive) {
-                                    isShown = false
+                                    do {
+                                        try viewContext.save()
+                                        actionSheet = false
+                                        isShown = false
+                                    } catch {
+                                        let nsError = error as NSError
+                                        fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                                    }
                                 } label: {
                                     Text("cdialog_confirm")
                                 }

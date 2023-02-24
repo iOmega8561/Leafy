@@ -55,7 +55,7 @@ struct MainPage: View {
                         
                         VStack(spacing: -20) {
                             Image("Tree")
-                            NavigationLink(destination: StopWatchREDUX()) {
+                            NavigationLink(destination: StopWatchREDUX().environment(\.managedObjectContext, viewContext)) {
                                 Text("main_startsession")
                                     .font(.system(size:30, weight:.semibold))
                                     .foregroundColor(Color("ButtonText"))

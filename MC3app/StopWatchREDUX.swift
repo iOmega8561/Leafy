@@ -22,7 +22,7 @@ var backBTN: some View {
 
 struct StopWatchREDUX: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @ObservedObject var stopWatchManager = StopWatchManager()
+    @StateObject private var stopWatchManager = StopWatchManager()
     
     var body: some View {
         GeometryReader { proxy in
@@ -85,7 +85,7 @@ struct StopWatchREDUX: View {
                                                 self.stopWatchManager.breakOn()
                                             }
                                         }) {
-                                            Image(systemName: stopWatchManager.mode == .breakOn ? "pause.fill":"play.fill")
+                                            Image(systemName: stopWatchManager.mode == .breakOn ? "stop.fill":"play.fill")
                                                 .renderingMode(.template)
                                                 .resizable()
                                                 .scaledToFit()
@@ -130,7 +130,8 @@ struct StopWatchREDUX: View {
                             
                         } else {
                             
-                            Button(action: {self.stopWatchManager.Start()}) {
+                            Button(action: { stopWatchManager.mode == .stopped ? self.stopWatchManager.Start():self.stopWatchManager.stop();self.stopWatchManager.Start() })
+                            {
                                 Text("stopwatch_start")
                                     .font(.system(size: 35, weight: .semibold))
                                     .foregroundColor(Color("ButtonText"))
