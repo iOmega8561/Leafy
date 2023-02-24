@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */; };
-		DD3C57FE29A3C4C500BCB543 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */; };
 		DD8770AB29A64B0D00A1E099 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8770AA29A64B0D00A1E099 /* DetailView.swift */; };
-		DD90564529A52323001D3534 /* StopwatchUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90564429A52323001D3534 /* StopwatchUnitView.swift */; };
 		DD90564729A527A2001D3534 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90564629A527A2001D3534 /* SheetView.swift */; };
+		E35F7FA729A8F81A00F37FB2 /* StopWatchREDUX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35F7FA629A8F81A00F37FB2 /* StopWatchREDUX.swift */; };
 		E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */; };
 		E3A4E39129A3B7B300D998C1 /* LogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39029A3B7B300D998C1 /* LogList.swift */; };
 		E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E39229A3B7B300D998C1 /* Assets.xcassets */; };
@@ -43,10 +42,9 @@
 
 /* Begin PBXFileReference section */
 		DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchManager.swift; sourceTree = "<group>"; };
-		DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		DD8770AA29A64B0D00A1E099 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
-		DD90564429A52323001D3534 /* StopwatchUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchUnitView.swift; sourceTree = "<group>"; };
 		DD90564629A527A2001D3534 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		E35F7FA629A8F81A00F37FB2 /* StopWatchREDUX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchREDUX.swift; sourceTree = "<group>"; };
 		E3A4E38B29A3B7B300D998C1 /* MC3app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appApp.swift; sourceTree = "<group>"; };
 		E3A4E39029A3B7B300D998C1 /* LogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogList.swift; sourceTree = "<group>"; };
@@ -116,8 +114,7 @@
 				E3DD8F0D29A5019F00F88268 /* MainPage.swift */,
 				DD90564629A527A2001D3534 /* SheetView.swift */,
 				E3CED42E29A78A5C00728D73 /* Localizable.strings */,
-				DD3C57FD29A3C4C500BCB543 /* StopWatch.swift */,
-				DD90564429A52323001D3534 /* StopwatchUnitView.swift */,
+				E35F7FA629A8F81A00F37FB2 /* StopWatchREDUX.swift */,
 				DD8770AA29A64B0D00A1E099 /* DetailView.swift */,
 				DD3C57FB29A3C43500BCB543 /* StopWatchManager.swift */,
 				E3A4E39229A3B7B300D998C1 /* Assets.xcassets */,
@@ -275,13 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E35F7FA729A8F81A00F37FB2 /* StopWatchREDUX.swift in Sources */,
 				E3A4E39829A3B7B300D998C1 /* Persistence.swift in Sources */,
-				DD3C57FE29A3C4C500BCB543 /* StopWatch.swift in Sources */,
 				DD90564729A527A2001D3534 /* SheetView.swift in Sources */,
 				DD8770AB29A64B0D00A1E099 /* DetailView.swift in Sources */,
 				DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */,
 				E3A4E39129A3B7B300D998C1 /* LogList.swift in Sources */,
-				DD90564529A52323001D3534 /* StopwatchUnitView.swift in Sources */,
 				E3DD8F0E29A5019F00F88268 /* MainPage.swift in Sources */,
 				E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */,
 				E3A4E39B29A3B7B300D998C1 /* MC3app.xcdatamodeld in Sources */,
