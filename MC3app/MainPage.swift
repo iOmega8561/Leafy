@@ -46,7 +46,7 @@ struct MainPage: View {
                                 
                             }
                             .disabled(items.count == 0 ? true:false)
-                            //.grayscale(items.count == 0 ? 0.8:0.0)
+                            .grayscale(items.count == 0 ? 0.8:0.0)
                             
                             Spacer().frame(maxWidth: proxy.size.width * 0.15)
                         }
