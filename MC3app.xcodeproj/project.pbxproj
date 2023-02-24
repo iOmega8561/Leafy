@@ -11,7 +11,7 @@
 		DD8770AB29A64B0D00A1E099 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8770AA29A64B0D00A1E099 /* DetailView.swift */; };
 		DD90564729A527A2001D3534 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90564629A527A2001D3534 /* SheetView.swift */; };
 		E35F7FA729A8F81A00F37FB2 /* StopWatchREDUX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35F7FA629A8F81A00F37FB2 /* StopWatchREDUX.swift */; };
-		E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */; };
+		E3A4E38F29A3B7B300D998C1 /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3App.swift */; };
 		E3A4E39129A3B7B300D998C1 /* LogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39029A3B7B300D998C1 /* LogList.swift */; };
 		E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E39229A3B7B300D998C1 /* Assets.xcassets */; };
 		E3A4E39829A3B7B300D998C1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39729A3B7B300D998C1 /* Persistence.swift */; };
@@ -45,8 +45,8 @@
 		DD8770AA29A64B0D00A1E099 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DD90564629A527A2001D3534 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		E35F7FA629A8F81A00F37FB2 /* StopWatchREDUX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchREDUX.swift; sourceTree = "<group>"; };
-		E3A4E38B29A3B7B300D998C1 /* MC3app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MC3app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3appApp.swift; sourceTree = "<group>"; };
+		E3A4E38B29A3B7B300D998C1 /* Grounded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grounded.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3A4E38E29A3B7B300D998C1 /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
 		E3A4E39029A3B7B300D998C1 /* LogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogList.swift; sourceTree = "<group>"; };
 		E3A4E39229A3B7B300D998C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3A4E39729A3B7B300D998C1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		E3A4E38C29A3B7B300D998C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3A4E38B29A3B7B300D998C1 /* MC3app.app */,
+				E3A4E38B29A3B7B300D998C1 /* Grounded.app */,
 				E3A4E3A029A3B7B400D998C1 /* MC3appTests.xctest */,
 				E3A4E3AA29A3B7B400D998C1 /* MC3appUITests.xctest */,
 			);
@@ -109,7 +109,7 @@
 		E3A4E38D29A3B7B300D998C1 /* MC3app */ = {
 			isa = PBXGroup;
 			children = (
-				E3A4E38E29A3B7B300D998C1 /* MC3appApp.swift */,
+				E3A4E38E29A3B7B300D998C1 /* MC3App.swift */,
 				E3A4E39029A3B7B300D998C1 /* LogList.swift */,
 				E3DD8F0D29A5019F00F88268 /* MainPage.swift */,
 				DD90564629A527A2001D3534 /* SheetView.swift */,
@@ -144,9 +144,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3A4E38A29A3B7B200D998C1 /* MC3app */ = {
+		E3A4E38A29A3B7B200D998C1 /* Grounded */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3A4E3B429A3B7B400D998C1 /* Build configuration list for PBXNativeTarget "MC3app" */;
+			buildConfigurationList = E3A4E3B429A3B7B400D998C1 /* Build configuration list for PBXNativeTarget "Grounded" */;
 			buildPhases = (
 				E3A4E38729A3B7B200D998C1 /* Sources */,
 				E3A4E38829A3B7B200D998C1 /* Frameworks */,
@@ -156,9 +156,9 @@
 			);
 			dependencies = (
 			);
-			name = MC3app;
+			name = Grounded;
 			productName = MC3app;
-			productReference = E3A4E38B29A3B7B300D998C1 /* MC3app.app */;
+			productReference = E3A4E38B29A3B7B300D998C1 /* Grounded.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E3A4E39F29A3B7B400D998C1 /* MC3appTests */ = {
@@ -234,7 +234,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3A4E38A29A3B7B200D998C1 /* MC3app */,
+				E3A4E38A29A3B7B200D998C1 /* Grounded */,
 				E3A4E39F29A3B7B400D998C1 /* MC3appTests */,
 				E3A4E3A929A3B7B400D998C1 /* MC3appUITests */,
 			);
@@ -279,7 +279,7 @@
 				DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */,
 				E3A4E39129A3B7B300D998C1 /* LogList.swift in Sources */,
 				E3DD8F0E29A5019F00F88268 /* MainPage.swift in Sources */,
-				E3A4E38F29A3B7B300D998C1 /* MC3appApp.swift in Sources */,
+				E3A4E38F29A3B7B300D998C1 /* MC3App.swift in Sources */,
 				E3A4E39B29A3B7B300D998C1 /* MC3app.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,12 +306,12 @@
 /* Begin PBXTargetDependency section */
 		E3A4E3A229A3B7B400D998C1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E3A4E38A29A3B7B200D998C1 /* MC3app */;
+			target = E3A4E38A29A3B7B200D998C1 /* Grounded */;
 			targetProxy = E3A4E3A129A3B7B400D998C1 /* PBXContainerItemProxy */;
 		};
 		E3A4E3AC29A3B7B400D998C1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E3A4E38A29A3B7B200D998C1 /* MC3app */;
+			target = E3A4E38A29A3B7B200D998C1 /* Grounded */;
 			targetProxy = E3A4E3AB29A3B7B400D998C1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -456,7 +456,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = T8HX5554JX;
+				DEVELOPMENT_TEAM = TR7QYD9K6M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -488,7 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = T8HX5554JX;
+				DEVELOPMENT_TEAM = TR7QYD9K6M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -558,7 +558,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8HX5554JX;
+				DEVELOPMENT_TEAM = TR7QYD9K6M;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MC3appUITests;
@@ -576,7 +576,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = T8HX5554JX;
+				DEVELOPMENT_TEAM = TR7QYD9K6M;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MC3appUITests;
@@ -600,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3A4E3B429A3B7B400D998C1 /* Build configuration list for PBXNativeTarget "MC3app" */ = {
+		E3A4E3B429A3B7B400D998C1 /* Build configuration list for PBXNativeTarget "Grounded" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3A4E3B529A3B7B400D998C1 /* Debug */,
