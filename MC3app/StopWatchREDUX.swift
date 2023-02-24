@@ -52,7 +52,7 @@ struct StopWatchREDUX: View {
                                         Text(":")
                                         StopwatchUnitView(type: 0, timeUnit: stopWatchManager.seconds)
                                     }
-                                    .font(.system(size:70, weight: .semibold))
+                                    .font(.system(size:65, weight: .semibold))
                                     .foregroundColor(Color("TextColor"))
                                     
                                     Spacer()

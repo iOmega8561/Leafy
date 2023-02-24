@@ -84,7 +84,7 @@ struct LogList: View {
                                 Spacer().frame(maxHeight: 6.0)
                                 
                                 HStack {
-                                    Text("\(item.studyhours)h \(item.studyminutes)m")
+                                    Text("\(item.studyhours)h \(item.studyminutes)m \(item.studyseconds)s")
                                         .foregroundColor(Color("TextColor"))
                                     Spacer()
                                 }

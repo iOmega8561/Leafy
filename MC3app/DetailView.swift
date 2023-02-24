@@ -51,11 +51,11 @@ struct DetailView: View {
                             Spacer().frame(maxWidth: 10.0)
                             
                             VStack(spacing: 7.0) {
-                                Text("\(item.studyhours)h \(item.studyminutes)m")
+                                Text("\(item.studyhours)h \(item.studyminutes)m \(item.studyseconds)s")
                                     .font(.system(size: 20.0))
                                     .foregroundColor(Color("TextColor"))
                                 
-                                Text("\(item.breakhours)h \(item.breakminutes)m")
+                                Text("\(item.breakhours)h \(item.breakminutes)m \(item.breakseconds)s")
                                     .foregroundColor(Color("TextColor"))
                                     .font(.system(size: 20.0))
                             }

@@ -160,7 +160,7 @@ struct SheetView: View {
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 7.0)
                                                 .foregroundColor(item.emotion == Int16(n) ? Color("ButtonBackground"):.white)
-                                                .frame(maxWidth: 85.0, maxHeight: 20.0)
+                                                //.frame(maxWidth: 85.0, maxHeight: 20.0)
                                                 .overlay(
                                                     Text(LocalizedStringKey(imgs[n]))
                                                         .foregroundColor(item.emotion == Int16(n) ? Color("ButtonText"):Color("TextColor"))
