@@ -33,3 +33,7 @@
 "details_breaktime" = "Break time:";
 "details_nicewords" = "Nice words from you";
 "details_writemore" = "More about feelings";
+"stopwatch_studytime" = "Study time";
+"stopwatch_breaktime" = "Break time";
+"stopwatch_start" = "Start";
+"stopwatch_finish" = "Finish";
