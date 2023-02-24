@@ -33,8 +33,8 @@ struct MainPage: View {
                                 ZStack {
                                     Text("main_loglist")
                                         .font(.system(size:25, weight:.semibold))
-                                        .foregroundColor(Color("ButtonText"))
-                                        .frame(minWidth: 200.0, minHeight: 40.0)
+                                        .foregroundColor(items.count == 0 ?  .gray:Color("ButtonText"))
+                                        .frame(minWidth: 180.0, minHeight: 40.0)
                                         .background(Color("ButtonBackground"))
                                         .cornerRadius(12)
                                     Image("Book")
@@ -48,7 +48,7 @@ struct MainPage: View {
                             .disabled(items.count == 0 ? true:false)
                             .grayscale(items.count == 0 ? 0.8:0.0)
                             
-                            Spacer().frame(maxWidth: proxy.size.width * 0.15)
+                            Spacer().frame(maxWidth: proxy.size.width * 0.17)
                         }
                         
                         Spacer().frame(maxHeight: 100.0)
