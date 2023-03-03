@@ -31,9 +31,13 @@
 "details_title" = "Dettagli";
 "details_studytime" = "Tempo di studio:";
 "details_breaktime" = "Tempo di pause:";
-"details_nicewords" = "Le tue belle parole";
-"details_writemore" = "Altro sui sentimenti";
+"details_nicewords" = "Parole gentili per me stesso";
+"details_writemore" = "I miei sentimenti";
 "stopwatch_studytime" = "Tempo studio";
 "stopwatch_breaktime" = "Tempo pausa";
 "stopwatch_start" = "Avvia";
 "stopwatch_finish" = "Termina";
+"cdialog_text_2" = "Vuoi terminare la sessione?
+L'uscita cancellerà tutto il tracciamento in corso";
+"button_cancel"  = "Cancella";
+"button_done" = "Fatto";

@@ -9,16 +9,16 @@ import SwiftUI
 import CoreData
 
 let imgs = [
-"angry",
-"happy",
-"sad",
-"surprised",
-"tired"
+    "angry",
+    "happy",
+    "sad",
+    "surprised",
+    "tired"
 ]
 
 struct LogList: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)],
         animation: .default)
@@ -112,11 +112,11 @@ struct LogList: View {
             }
         }.accentColor(Color("TextColor"))
     }
-
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
-
+            
             do {
                 try viewContext.save()
             } catch {
