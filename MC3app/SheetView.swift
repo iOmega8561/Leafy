@@ -10,7 +10,7 @@ import CoreData
 
 struct NewItem {
     var timestamp: Date = Date()
-
+    
     var emotion: Int16 = 0
     var subject: String = ""
     var saynicetoyou: String = ""
@@ -117,9 +117,10 @@ struct SheetView: View {
                     HStack {
                         Spacer()
                         
-                        TextField("sheet_mandatory", text: $item.whatdidyoustudy)
+                        TextField("sheet_mandatory", text: $item.whatdidyoustudy, axis: .vertical)
                             .foregroundColor(Color("TextColor"))
                             .padding(10)
+                            .lineLimit(5)
                             .font(.system(size: 20.0))
                             .frame(maxWidth: proxy.size.width * 0.85, minHeight: 50)
                             .cornerRadius(10.0)
@@ -160,7 +161,7 @@ struct SheetView: View {
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 7.0)
                                                 .foregroundColor(item.emotion == Int16(n) ? Color("ButtonBackground"):.white)
-                                                //.frame(maxWidth: 85.0, maxHeight: 20.0)
+                                            //.frame(maxWidth: 85.0, maxHeight: 20.0)
                                                 .overlay(
                                                     Text(LocalizedStringKey(imgs[n]))
                                                         .foregroundColor(item.emotion == Int16(n) ? Color("ButtonText"):Color("TextColor"))
@@ -253,7 +254,7 @@ struct SheetView: View {
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        CustomButton(label: LocalizedStringKey("button_save"), action: { if saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) { isShown = false } else { triedToSave = true } /*; dismiss()*/ }, type: 0)
+                        CustomButton(label: LocalizedStringKey("button_done"), action: { if saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) { isShown = false } else { triedToSave = true } /*; dismiss()*/ }, type: 0)
                     }
                 }
             }
@@ -279,7 +280,7 @@ struct SheetView: View {
         newItem.breakhours = bhours
         newItem.breakminutes = bminutes
         newItem.breakseconds = bseconds
-
+        
         do {
             try viewContext.save()
             return true
@@ -290,7 +291,7 @@ struct SheetView: View {
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
-
+    
 }
 
 struct SheetView_Previews: PreviewProvider {

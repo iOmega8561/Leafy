@@ -24,6 +24,9 @@ struct StopWatchREDUX: View {
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var stopWatchManager = StopWatchManager()
     
+    
+    @State private var actionSheet: Bool = false
+    
     var body: some View {
         GeometryReader { proxy in
             NavigationStack {
@@ -85,15 +88,15 @@ struct StopWatchREDUX: View {
                                                 self.stopWatchManager.breakOn()
                                             }
                                         }) {
-                                            Image(systemName: stopWatchManager.mode == .breakOn ? "stop.fill":"play.fill")
+                                            Image(systemName: stopWatchManager.mode == .breakOn ? "pause.fill":"play.fill")
                                                 .renderingMode(.template)
                                                 .resizable()
                                                 .scaledToFit()
                                                 .foregroundColor(stopWatchManager.mode == .stopped ? .gray:Color("ButtonText"))
-                                                .frame(maxWidth: 25.0)
+                                                .frame(maxWidth: 20.0)
                                         }
                                         .disabled(stopWatchManager.mode == .stopped)
-                                        .frame(minWidth: 60.0, minHeight: 50.0)
+                                        .frame(minWidth: 55.0, minHeight: 40.0)
                                         .background(Color("ButtonBackground"))
                                         .cornerRadius(6.0)
                                         .grayscale(stopWatchManager.mode == .stopped ? 1.0:0.0)
@@ -102,12 +105,33 @@ struct StopWatchREDUX: View {
                                     }
                                     
                                     Spacer()
-                                    
-                                    Image("LeafGroup")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(maxWidth: proxy.size.width * 0.87)
-                                    
+                                    if stopWatchManager.mode == .running || stopWatchManager.mode == .breakOff {
+                                        HStack{
+                                        Image("Tree")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(maxWidth: 300, maxHeight: 300)
+                                            .offset(x: 0 , y: 50)
+//                                            if stopWatchManager.secondsElapsed > 2{
+//                                                Image("Tree")
+//                                                    .resizable()
+//                                                    .scaledToFit()
+//                                                    .frame(maxWidth: 200, maxHeight: 200)
+//                                            }
+//                                            if stopWatchManager.secondsElapsed > 3{
+//                                                Image("Tree")
+//                                                    .resizable()
+//                                                    .scaledToFit()
+//                                                    .frame(maxWidth: 200, maxHeight: 200)
+//                                            }
+                                        }
+                                    }
+                                    if stopWatchManager.mode == .breakOn || stopWatchManager.mode == .stopped{
+                                        Image("LeafGroup")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(maxWidth: 300, maxHeight: 300)
+                                    }
                                     Spacer().frame(maxHeight: 40.0)
                                 }
                             )
@@ -120,13 +144,13 @@ struct StopWatchREDUX: View {
                                 .environment(\.managedObjectContext, viewContext)
                                 .navigationBarBackButtonHidden(true)
                                 .navigationBarItems(leading: backBTN)) {
-                                Text("stopwatch_finish")
+                                    Text("stopwatch_finish")
                                         .font(.system(size: 35, weight: .semibold))
                                         .foregroundColor(Color("ButtonText"))
-                            }
-                            .frame(maxWidth: proxy.size.width * 0.4, maxHeight: proxy.size.height * 0.09)
-                            .background(Color("ButtonBackground"))
-                            .cornerRadius(10.0)
+                                }
+                                .frame(maxWidth: proxy.size.width * 0.4, maxHeight: proxy.size.height * 0.09)
+                                .background(Color("ButtonBackground"))
+                                .cornerRadius(10.0)
                             
                         } else {
                             
@@ -143,6 +167,19 @@ struct StopWatchREDUX: View {
                     }
                 }
                 .edgesIgnoringSafeArea(.all)
+                .toolbar {
+                    ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
+                        CustomButton(label: LocalizedStringKey("button_back"), action: { actionSheet = true/*; dismiss()*/ }, type: 1)
+                            .confirmationDialog(LocalizedStringKey("cdialog_text_2"), isPresented: $actionSheet, titleVisibility: .visible){
+                                HStack{
+                                    NavigationLink(destination: MainPage()
+                                        .navigationBarBackButtonHidden(true)){
+                                            Text("button_exit")
+                                        }
+                                }
+                            }
+                    }
+                }
             }
             .accentColor(Color("TextColor"))
         }
@@ -152,14 +189,14 @@ struct StopWatchREDUX: View {
 struct StopwatchUnitView: View {
     var type: Int
     var timeUnit: Int
-
+    
     /// Time unit expressed as String.
     /// - Includes "0" as prefix if this is less than 10
     var timeUnitStr: String {
         let timeUnitStr = String(timeUnit)
         return timeUnit < 10 ? "0" + timeUnitStr : timeUnitStr
     }
-
+    
     var body: some View {
         HStack (spacing: 2) {
             Text(timeUnitStr.substring (index: 0)).frame(width: type == 0 ? 42:20)

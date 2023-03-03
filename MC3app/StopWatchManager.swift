@@ -23,16 +23,14 @@ class StopWatchManager: ObservableObject{
     
     @Published var studyBreak = 0
     
-    let currenttime = Date()
-    
     var hours: Int {
-      secondsElapsed / 3600
+        secondsElapsed / 3600
     }
-
+    
     var minutes: Int {
-      (secondsElapsed % 3600) / 60
+        (secondsElapsed % 3600) / 60
     }
-
+    
     var seconds: Int {
         secondsElapsed % 60
     }
@@ -40,11 +38,11 @@ class StopWatchManager: ObservableObject{
     var hours_2: Int {
         studyBreak / 3600
     }
-
+    
     var minutes_2: Int {
-      (studyBreak % 3600) / 60
+        (studyBreak % 3600) / 60
     }
-
+    
     var seconds_2: Int {
         studyBreak % 60
     }
@@ -93,11 +91,11 @@ class StopWatchManager: ObservableObject{
     }
     
     func updateTimer(date : Date) -> Int{
-            
+        
         let update = Calendar.current.dateComponents([.second], from: date , to: Date())
-            
-            let second = update.second ?? 0
-            
-            return second
-        }
+        
+        let second = update.second ?? 0
+        
+        return second
+    }
 }

@@ -16,7 +16,7 @@ struct MainPage: View {
         animation: .default)
     
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         GeometryReader { proxy in
             NavigationStack {
@@ -37,11 +37,13 @@ struct MainPage: View {
                                         .frame(minWidth: 180.0, minHeight: 40.0)
                                         .background(Color("ButtonBackground"))
                                         .cornerRadius(12)
-                                    Image("Book")
+                                        .offset(x:40, y: 13)
+                                    Image("LeafSmall")
                                         .resizable()
+                                        .frame(width: 150, height: 150)
                                         .scaledToFit()
                                         .frame(width: 120)
-                                        .offset(x:-70, y: -5)
+                                        .offset(x:-30, y: 30)
                                 }
                                 
                             }
@@ -55,15 +57,16 @@ struct MainPage: View {
                         
                         VStack(spacing: -20) {
                             Image("Tree")
-                            NavigationLink(destination: StopWatchREDUX().environment(\.managedObjectContext, viewContext)) {
-                                Text("main_startsession")
-                                    .font(.system(size:30, weight:.semibold))
-                                    .foregroundColor(Color("ButtonText"))
-                            }
-                            .isDetailLink(true)
-                            .frame(minWidth: proxy.size.width * 0.65, minHeight: proxy.size.height * 0.12)
-                            .background(Color("ButtonBackground"))
-                            .cornerRadius(12)
+                            NavigationLink(destination: StopWatchREDUX().environment(\.managedObjectContext, viewContext)
+                                .navigationBarBackButtonHidden(true)) {
+                                    Text("main_startsession")
+                                        .font(.system(size:30, weight:.semibold))
+                                        .foregroundColor(Color("ButtonText"))
+                                }
+                                .isDetailLink(true)
+                                .frame(minWidth: proxy.size.width * 0.9, minHeight: proxy.size.height * 0.12)
+                                .background(Color("ButtonBackground"))
+                                .cornerRadius(12)
                         }
                     }
                 }

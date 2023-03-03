@@ -31,9 +31,14 @@
 "details_title" = "Details";
 "details_studytime" = "Study time:";
 "details_breaktime" = "Break time:";
-"details_nicewords" = "Nice words from you";
-"details_writemore" = "More about feelings";
+"details_nicewords" = "Kind words to Myself";
+"details_writemore" = "My feelings";
 "stopwatch_studytime" = "Study time";
 "stopwatch_breaktime" = "Break time";
 "stopwatch_start" = "Start";
 "stopwatch_finish" = "Finish";
+"cdialog_text_2" = "Do you want to end the session?
+Exiting will erase all on going tracking";
+"button_cancel"  = "Cancel";
+"button_done" = "Done";
+ 

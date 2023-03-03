@@ -12,7 +12,7 @@ struct DetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     var item: FetchedResults<Item>.Element
-
+    
     init(item: FetchedResults<Item>.Element) {
         self.item = item
         
@@ -70,7 +70,7 @@ struct DetailView: View {
                                 HStack {
                                     Spacer().frame(maxWidth: 30.0)
                                     Text(item.subject ?? "No subject!")
-                                        .font(.system(size: 34.0, weight: .bold))
+                                        .font(.system(size: 30.0, weight: .bold))
                                         .foregroundColor(Color("TextColor"))
                                     Spacer()
                                 }
@@ -93,7 +93,7 @@ struct DetailView: View {
                                     HStack {
                                         Spacer().frame(maxWidth: 30.0)
                                         Text("details_writemore")
-                                            .font(.system(size: 34.0, weight: .bold))
+                                            .font(.system(size: 24.0, weight: .bold))
                                             .foregroundColor(Color("TextColor"))
                                         Spacer()
                                     }
@@ -118,7 +118,7 @@ struct DetailView: View {
                                         Spacer().frame(maxWidth: 30.0)
                                         Text("details_nicewords")
                                             .foregroundColor(Color("TextColor"))
-                                            .font(.system(size: 34.0, weight: .bold))
+                                            .font(.system(size: 24.0, weight: .bold))
                                         Spacer()
                                     }
                                     
