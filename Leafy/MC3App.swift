@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct MC3appApp: App {
-    let persistenceController = PersistenceController.shared                                   // Container to save the study cards
+    let persistenceController = PersistenceController.shared // Container to save the study cards
     
     var body: some Scene {
         WindowGroup {

@@ -17,10 +17,14 @@ struct DetailView: View {
         self.item = item
         
         //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor(Color("TextColor"))
+        ]
         
         //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+        UINavigationBar.appearance().titleTextAttributes = [
+            .foregroundColor: UIColor(Color("TextColor"))
+        ]
     }
     
     var body: some View {
@@ -143,11 +147,5 @@ struct DetailView: View {
                 }.ignoresSafeArea()
             }
         }
-    }
-}
-
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        LogList().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

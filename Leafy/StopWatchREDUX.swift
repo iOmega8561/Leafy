@@ -7,30 +7,33 @@
 
 import SwiftUI
 
-var backBTN: some View {
-    
-    NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true)) {
-        HStack {
-            Image(systemName: "chevron.backward")
-                .renderingMode(.template)
-                .foregroundColor(Color("TextColor"))
-            Text("button_back")
-                .foregroundColor(Color("TextColor"))
-        }
-    }
-}
-
 struct StopWatchREDUX: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
     @StateObject private var stopWatchManager = StopWatchManager()
     
-    
     @State private var actionSheet: Bool = false
     
+    private var backButton: some View {
+        NavigationLink(destination: MainPage().navigationBarBackButtonHidden(true)) {
+            HStack {
+                Image(systemName: "chevron.backward")
+                    .renderingMode(.template)
+                    .foregroundColor(Color("TextColor"))
+                Text("button_back")
+                    .foregroundColor(Color("TextColor"))
+            }
+        }
+    }
+    
     var body: some View {
+        
         GeometryReader { proxy in
+        
             NavigationStack {
+            
                 ZStack {
+                
                     Color("background")
                     
                     VStack {
@@ -105,28 +108,18 @@ struct StopWatchREDUX: View {
                                     }
                                     
                                     Spacer()
-                                    if stopWatchManager.mode == .running || stopWatchManager.mode == .breakOff {
+                                    if stopWatchManager.mode == .running ||
+                                       stopWatchManager.mode == .breakOff {
                                         HStack{
                                         Image("Tree")
                                             .resizable()
                                             .scaledToFit()
                                             .frame(maxWidth: 300, maxHeight: 300)
                                             .offset(x: 0 , y: 50)
-//                                            if stopWatchManager.secondsElapsed > 2{
-//                                                Image("Tree")
-//                                                    .resizable()
-//                                                    .scaledToFit()
-//                                                    .frame(maxWidth: 200, maxHeight: 200)
-//                                            }
-//                                            if stopWatchManager.secondsElapsed > 3{
-//                                                Image("Tree")
-//                                                    .resizable()
-//                                                    .scaledToFit()
-//                                                    .frame(maxWidth: 200, maxHeight: 200)
-//                                            }
                                         }
                                     }
-                                    if stopWatchManager.mode == .breakOn || stopWatchManager.mode == .stopped{
+                                    if stopWatchManager.mode == .breakOn ||
+                                       stopWatchManager.mode == .stopped{
                                         Image("LeafGroup")
                                             .resizable()
                                             .scaledToFit()
@@ -138,12 +131,20 @@ struct StopWatchREDUX: View {
                         
                         Spacer().frame(maxHeight: 20.0)
                         
-                        if stopWatchManager.mode == .running || stopWatchManager.mode == .breakOn || stopWatchManager.mode == .breakOff {
+                        if stopWatchManager.mode == .running ||
+                           stopWatchManager.mode == .breakOn ||
+                           stopWatchManager.mode == .breakOff {
                             
-                            NavigationLink(destination: LogList(showModal: true, studyhours: Int16(stopWatchManager.hours), studyminutes: Int16(stopWatchManager.minutes), studyseconds: Int16(stopWatchManager.seconds), breakhours: Int16(stopWatchManager.hours_2), breakminutes: Int16(stopWatchManager.minutes_2), breakseconds: Int16(stopWatchManager.seconds_2))
+                            NavigationLink(destination: LogList(showModal: true,
+                                                                studyhours: Int16(stopWatchManager.hours),
+                                                                studyminutes: Int16(stopWatchManager.minutes),
+                                                                studyseconds: Int16(stopWatchManager.seconds),
+                                                                breakhours: Int16(stopWatchManager.hours_2),
+                                                                breakminutes: Int16(stopWatchManager.minutes_2),
+                                                                breakseconds: Int16(stopWatchManager.seconds_2))
                                 .environment(\.managedObjectContext, viewContext)
                                 .navigationBarBackButtonHidden(true)
-                                .navigationBarItems(leading: backBTN)) {
+                                .navigationBarItems(leading: backButton)) {
                                     Text("stopwatch_finish")
                                         .font(.system(size: 35, weight: .semibold))
                                         .foregroundColor(Color("ButtonText"))
@@ -154,7 +155,9 @@ struct StopWatchREDUX: View {
                             
                         } else {
                             
-                            Button(action: { stopWatchManager.mode == .stopped ? self.stopWatchManager.Start():self.stopWatchManager.stop();self.stopWatchManager.Start() })
+                            Button(action: { stopWatchManager.mode == .stopped ?
+                                             self.stopWatchManager.Start():
+                                             self.stopWatchManager.stop();self.stopWatchManager.Start() })
                             {
                                 Text("stopwatch_start")
                                     .font(.system(size: 35, weight: .semibold))
@@ -169,8 +172,12 @@ struct StopWatchREDUX: View {
                 .edgesIgnoringSafeArea(.all)
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading){
-                        CustomButton(label: LocalizedStringKey("button_back"), action: { actionSheet = true/*; dismiss()*/ }, type: 1)
-                            .confirmationDialog(LocalizedStringKey("cdialog_text_2"), isPresented: $actionSheet, titleVisibility: .visible){
+                        CustomButton(label: LocalizedStringKey("button_back"),
+                                     action: { actionSheet = true }, type: 1)
+                        
+                            .confirmationDialog(LocalizedStringKey("cdialog_text_2"),
+                                                isPresented: $actionSheet,
+                                                titleVisibility: .visible){
                                 HStack{
                                     NavigationLink(destination: MainPage()
                                         .navigationBarBackButtonHidden(true)){
@@ -209,11 +216,5 @@ extension String {
     func substring(index: Int) -> String {
         let arrayString = Array(self)
         return String(arrayString[index])
-    }
-}
-
-struct StopWatchREDUX_Previews: PreviewProvider {
-    static var previews: some View {
-        StopWatchREDUX()
     }
 }

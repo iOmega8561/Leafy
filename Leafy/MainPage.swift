@@ -11,9 +11,8 @@ import CoreData
 struct MainPage: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+                  animation: .default)
     
     private var items: FetchedResults<Item>
     
@@ -74,12 +73,5 @@ struct MainPage: View {
             }
             .accentColor(Color("TextColor"))
         }
-    }
-}
-
-
-struct MainPage_Previews: PreviewProvider {
-    static var previews: some View {
-        MainPage()
     }
 }

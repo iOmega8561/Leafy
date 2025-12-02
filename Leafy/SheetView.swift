@@ -1,10 +1,10 @@
-////
-////  SheetView.swift
-////  MC3app
-////
-////  Created by Aryan Garg on 21/02/23.
-////
 //
+//  SheetView.swift
+//  MC3app
+//
+//  Created by Aryan Garg on 21/02/23.
+//
+
 import SwiftUI
 import CoreData
 
@@ -57,7 +57,13 @@ struct SheetView: View {
     var breakseconds: Int16 = 0
     
     
-    init(isShown: Binding<Bool>, studyhours: Int16 = 0, studyminutes: Int16 = 0, studyseconds: Int16 = 0, breakhours: Int16 = 0, breakminutes: Int16 = 0, breakseconds: Int16 = 0) {
+    init(isShown: Binding<Bool>,
+         studyhours: Int16 = 0,
+         studyminutes: Int16 = 0,
+         studyseconds: Int16 = 0,
+         breakhours: Int16 = 0,
+         breakminutes: Int16 = 0,
+         breakseconds: Int16 = 0) {
         
         self._isShown = isShown
         self.studyhours = studyhours
@@ -69,10 +75,14 @@ struct SheetView: View {
         
         
         //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            .foregroundColor: UIColor(Color("TextColor"))
+        ]
         
         //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(Color("TextColor"))]
+        UINavigationBar.appearance().titleTextAttributes = [
+            .foregroundColor: UIColor(Color("TextColor"))
+        ]
     }
     
     var body: some View {
@@ -161,7 +171,6 @@ struct SheetView: View {
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 7.0)
                                                 .foregroundColor(item.emotion == Int16(n) ? Color("ButtonBackground"):.white)
-                                            //.frame(maxWidth: 85.0, maxHeight: 20.0)
                                                 .overlay(
                                                     Text(LocalizedStringKey(imgs[n]))
                                                         .foregroundColor(item.emotion == Int16(n) ? Color("ButtonText"):Color("TextColor"))
@@ -236,7 +245,7 @@ struct SheetView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarLeading) {
-                        CustomButton(label: LocalizedStringKey("button_exit"), action: { actionSheet = true/*; dismiss()*/ }, type: 1)
+                        CustomButton(label: LocalizedStringKey("button_exit"), action: { actionSheet = true }, type: 1)
                             .confirmationDialog("cdialog_text", isPresented: $actionSheet, titleVisibility: .visible) {
                                 Button(role: .destructive) {
                                     do {
@@ -254,14 +263,33 @@ struct SheetView: View {
                     }
                     
                     ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        CustomButton(label: LocalizedStringKey("button_done"), action: { if saveItem(item: item, shours: studyhours, sminutes: studyminutes, sseconds: studyseconds, bhours: breakhours, bminutes: breakminutes, bseconds: breakseconds) { isShown = false } else { triedToSave = true } /*; dismiss()*/ }, type: 0)
+                        CustomButton(label: LocalizedStringKey("button_done"),
+                                     action: {
+                            if saveItem(item: item,
+                                        shours: studyhours,
+                                        sminutes: studyminutes,
+                                        sseconds: studyseconds,
+                                        bhours: breakhours,
+                                        bminutes: breakminutes,
+                                        bseconds: breakseconds) {
+                                isShown = false
+                            } else {
+                                triedToSave = true
+                            }
+                        }, type: 0)
                     }
                 }
             }
         }
     }
     
-    private func saveItem(item: NewItem, shours: Int16, sminutes: Int16, sseconds: Int16, bhours: Int16, bminutes: Int16, bseconds: Int16) -> Bool {
+    private func saveItem(item: NewItem,
+                          shours: Int16,
+                          sminutes: Int16,
+                          sseconds: Int16,
+                          bhours: Int16,
+                          bminutes: Int16,
+                          bseconds: Int16) -> Bool {
         
         if item.subject == "" || item.whatdidyoustudy == "" {
             return false
@@ -286,18 +314,11 @@ struct SheetView: View {
             return true
         } catch {
             // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            // fatalError() causes the application to generate a crash log and terminate.
+            // You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
     }
     
 }
-
-struct SheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        SheetView(isShown: .constant(false))
-    }
-}
-
-
