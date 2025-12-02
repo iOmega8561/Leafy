@@ -1,9 +1,14 @@
-/* 
+/*
+  Copyright (c) 2025 Giuseppe Rocco
+  Copyright (c) 2025 Aryan Garg
+  Licensed under the MIT License. See the LICENSE file for details.
+ 
+  -----------------------------------------------------------------
+
   Localizable.strings
-  MC3app
+  Leafy
 
   Created by Giuseppe Rocco on 23/02/23.
-  
 */
 "main_loglist" = "        Schede";
 "main_startsession" = "Inizia a studiare!";

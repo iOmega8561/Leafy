@@ -1,6 +1,12 @@
 //
+//  Copyright (c) 2025 Giuseppe Rocco
+//  Copyright (c) 2025 Aryan Garg
+//  Licensed under the MIT License. See the LICENSE file for details.
+//
+//  -----------------------------------------------------------------
+//
 //  DetailView.swift
-//  MC3app
+//  Leafy
 //
 //  Created by Aryan Garg on 22/02/23.
 //

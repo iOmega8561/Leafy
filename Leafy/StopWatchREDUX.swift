@@ -1,6 +1,12 @@
 //
+//  Copyright (c) 2025 Giuseppe Rocco
+//  Copyright (c) 2025 Aryan Garg
+//  Licensed under the MIT License. See the LICENSE file for details.
+//
+//  -----------------------------------------------------------------
+//
 //  StopWatchREDUX.swift
-//  MC3app
+//  Leafy
 //
 //  Created by Giuseppe Rocco on 24/02/23.
 //

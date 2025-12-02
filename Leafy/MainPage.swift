@@ -1,6 +1,12 @@
 //
-//  NewLogForm.swift
-//  MC3app
+//  Copyright (c) 2025 Giuseppe Rocco
+//  Copyright (c) 2025 Aryan Garg
+//  Licensed under the MIT License. See the LICENSE file for details.
+//
+//  -----------------------------------------------------------------
+//
+//  MainPage.swift
+//  Leafy
 //
 //  Created by Giuseppe Rocco on 21/02/23.
 //

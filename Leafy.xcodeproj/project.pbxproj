@@ -11,7 +11,7 @@
 		DD8770AB29A64B0D00A1E099 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8770AA29A64B0D00A1E099 /* DetailView.swift */; };
 		DD90564729A527A2001D3534 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90564629A527A2001D3534 /* SheetView.swift */; };
 		E35F7FA729A8F81A00F37FB2 /* StopWatchREDUX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35F7FA629A8F81A00F37FB2 /* StopWatchREDUX.swift */; };
-		E3A4E38F29A3B7B300D998C1 /* MC3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* MC3App.swift */; };
+		E3A4E38F29A3B7B300D998C1 /* LeafyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E38E29A3B7B300D998C1 /* LeafyApp.swift */; };
 		E3A4E39129A3B7B300D998C1 /* LogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39029A3B7B300D998C1 /* LogList.swift */; };
 		E3A4E39329A3B7B300D998C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E39229A3B7B300D998C1 /* Assets.xcassets */; };
 		E3A4E39829A3B7B300D998C1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E39729A3B7B300D998C1 /* Persistence.swift */; };
@@ -44,7 +44,7 @@
 		DDA6409129AE370D00390D06 /* Leafy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Leafy-Info.plist"; sourceTree = "<group>"; };
 		E35F7FA629A8F81A00F37FB2 /* StopWatchREDUX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchREDUX.swift; sourceTree = "<group>"; };
 		E3A4E38B29A3B7B300D998C1 /* Leafy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Leafy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3A4E38E29A3B7B300D998C1 /* MC3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MC3App.swift; sourceTree = "<group>"; };
+		E3A4E38E29A3B7B300D998C1 /* LeafyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeafyApp.swift; sourceTree = "<group>"; };
 		E3A4E39029A3B7B300D998C1 /* LogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogList.swift; sourceTree = "<group>"; };
 		E3A4E39229A3B7B300D998C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3A4E39729A3B7B300D998C1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		E3A4E38D29A3B7B300D998C1 /* Leafy */ = {
 			isa = PBXGroup;
 			children = (
-				E3A4E38E29A3B7B300D998C1 /* MC3App.swift */,
+				E3A4E38E29A3B7B300D998C1 /* LeafyApp.swift */,
 				E3A4E39029A3B7B300D998C1 /* LogList.swift */,
 				E3DD8F0D29A5019F00F88268 /* MainPage.swift */,
 				DD90564629A527A2001D3534 /* SheetView.swift */,
@@ -182,7 +182,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					E3A4E38A29A3B7B200D998C1 = {
 						CreatedOnToolsVersion = 14.2;
@@ -256,7 +256,7 @@
 				DD3C57FC29A3C43500BCB543 /* StopWatchManager.swift in Sources */,
 				E3A4E39129A3B7B300D998C1 /* LogList.swift in Sources */,
 				E3DD8F0E29A5019F00F88268 /* MainPage.swift in Sources */,
-				E3A4E38F29A3B7B300D998C1 /* MC3App.swift in Sources */,
+				E3A4E38F29A3B7B300D998C1 /* LeafyApp.swift in Sources */,
 				E3A4E39B29A3B7B300D998C1 /* MC3app.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
